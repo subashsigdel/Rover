@@ -1,0 +1,8 @@
+# drivetest  2026-09-11 15:11:54  rpi5  temp=50.5'C
+# $ bash pi.sh _drivetest
+ESP32 on /dev/ttyUSB1
+FORWARD (M110,110) for 1 s
+stop (M0,0) for 1 s
+BACKWARD (M-110,-110) for 1 s
+stopped
+# exit 0  2026-09-11 15:12:18

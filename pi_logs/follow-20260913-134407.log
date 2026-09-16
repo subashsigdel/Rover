@@ -1,0 +1,815 @@
+# follow  2026-09-13 13:44:07  rpi5  temp=54.8'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --port auto
+follow_rover: model=auto imgsz=320 source=usb transport=tcp cap=640x480 flip=False acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 start_ratio=0.85 port=auto max_pwm=150 min_pwm=90 steer=False hold=1.5 calibrate=False show=False view=8080
+NOT CALIBRATED - the rover will not drive. Stand at the stop distance (e.g. 50 cm) and run: ./pi.sh calibrate
+webcam: /dev/video0 640x480 @ 25 fps
+camera started: usb
+model loaded yolo11n_192x320.onnx, input [192, 320]
+rover link /dev/ttyUSB0 (ESP32 firmware answered)
+live view: http://<pi-address>:8080/
+Loading yolo11n_192x320.onnx for ONNX Runtime inference...
+Using ONNX Runtime 1.30.0 with CPUExecutionProvider
+ 0.0 fps  infer 2696.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 0.4 fps  infer 2203.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.0 fps  infer 877.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 447.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 304.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.8 fps  infer 256.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.1 fps  infer 234.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.3 fps  infer 223.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.4 fps  infer 217.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.5 fps  infer 219.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.5 fps  infer 221.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.5 fps  infer 220.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.5 fps  infer 219.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.5 fps  infer 220.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.5 fps  infer 222.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.4 fps  infer 229.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.4 fps  infer 230.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.4 fps  infer 225.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.5 fps  infer 222.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.5 fps  infer 219.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.5 fps  infer 220.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.5 fps  infer 222.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.4 fps  infer 230.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.3 fps  infer 245.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.3 fps  infer 234.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.4 fps  infer 229.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.0 fps  infer 274.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+calibrating: stand at the stop distance (e.g. 50 cm) and hold still - not driving
+ 4.1 fps  infer 249.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.0 fps  infer 260.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.1 fps  infer 247.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.1 fps  infer 239.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.2 fps  infer 236.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 4.2 fps  infer 239.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.9 fps  infer 270.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.8 fps  infer 272.5 ms  persons 1  LOCKED id 1  box 99%  calibrating 3/20  L  +0 R  +0
+ 3.8 fps  infer 263.3 ms  persons 1  LOCKED id 1  box 100%  calibrating 7/20  L  +0 R  +0
+ 3.8 fps  infer 257.8 ms  persons 1  LOCKED id 1  box 100%  calibrating 11/20  L  +0 R  +0
+ 3.8 fps  infer 251.9 ms  persons 1  LOCKED id 1  box 99%  calibrating 15/20  L  +0 R  +0
+ 3.8 fps  infer 256.4 ms  persons 1  LOCKED id 1  box 99%  calibrating 19/20  L  +0 R  +0
+calibrated: your box at the stop distance is 99% of the picture height - saved to calibration.json
+calibration done - following again
+ 3.7 fps  infer 265.8 ms  persons 1  LOCKED id 1  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.7 fps  infer 261.2 ms  persons 1  LOCKED id 1  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.7 fps  infer 265.9 ms  persons 0  SEARCHING id 1 1.1/10 s  no person - STOP  L  +0 R  +0
+ 3.7 fps  infer 268.3 ms  persons 1  LOCKED id 1  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.6 fps  infer 267.3 ms  persons 1  LOCKED id 1  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.6 fps  infer 264.3 ms  persons 1  LOCKED id 1  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.6 fps  infer 270.2 ms  persons 1  LOCKED id 1  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.6 fps  infer 272.5 ms  persons 1  LOCKED id 1  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.6 fps  infer 264.4 ms  persons 0  SEARCHING id 1 0.8/10 s  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 273.9 ms  persons 0  SEARCHING id 1 2.0/10 s  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 268.5 ms  persons 1  LOCKED id 1  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.6 fps  infer 276.0 ms  persons 1  LOCKED id 1  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.6 fps  infer 268.9 ms  persons 1  LOCKED id 1  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.5 fps  infer 278.2 ms  persons 1  LOCKED id 1  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.4 fps  infer 286.3 ms  persons 1  LOCKED id 1  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.4 fps  infer 287.9 ms  persons 1  LOCKED id 1  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.4 fps  infer 288.8 ms  persons 1  LOCKED id 1  box 95% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 294.1 ms  persons 1  LOCKED id 1  box 87% (stop at 99%)  STOP  L  +0 R  +0
+ 3.4 fps  infer 280.6 ms  persons 1  LOCKED id 1  box 79% (stop at 99%)  FOLLOW  L+114 R+114
+ 3.4 fps  infer 278.9 ms  persons 1  LOCKED id 1  box 77% (stop at 99%)  FOLLOW  L+117 R+117
+ 3.5 fps  infer 277.6 ms  persons 1  LOCKED id 1  box 96% (stop at 99%)  FOLLOW  L +94 R +94
+ 3.4 fps  infer 281.9 ms  persons 1  LOCKED id 1  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.5 fps  infer 275.6 ms  persons 0  SEARCHING id 1 1.2/10 s  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 274.8 ms  persons 0  SEARCHING id 1 2.3/10 s  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 271.7 ms  persons 0  SEARCHING id 1 3.5/10 s  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 276.8 ms  persons 0  SEARCHING id 1 4.7/10 s  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 278.1 ms  persons 0  SEARCHING id 1 5.8/10 s  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 274.2 ms  persons 0  SEARCHING id 1 7.0/10 s  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 280.5 ms  persons 0  SEARCHING id 1 8.2/10 s  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 286.0 ms  persons 0  SEARCHING id 1 9.4/10 s  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 296.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 293.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 288.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 286.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 292.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 288.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 295.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 288.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 293.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 288.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 275.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 274.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 270.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 272.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.7 fps  infer 268.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.7 fps  infer 270.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 276.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.7 fps  infer 267.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.7 fps  infer 268.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.7 fps  infer 275.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.7 fps  infer 274.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 286.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 280.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 281.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 273.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 275.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 273.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 274.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 282.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 279.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 272.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 301.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 286.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 286.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 282.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 281.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 283.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 276.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 278.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 280.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 282.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 273.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 285.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 281.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 278.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 286.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 289.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 286.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 288.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 292.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 280.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 276.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 282.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.6 fps  infer 276.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 301.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 303.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 298.1 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 302.4 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 300.3 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 301.4 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 301.9 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 307.4 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 298.8 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 293.7 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 296.1 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 305.5 ms  persons 1  LOCKED id 4  box 98% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 298.4 ms  persons 1  LOCKED id 4  box 91% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 300.1 ms  persons 1  LOCKED id 4  box 91% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 298.1 ms  persons 1  LOCKED id 4  box 91% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 303.0 ms  persons 1  LOCKED id 4  box 82% (stop at 99%)  FOLLOW  L+110 R+110
+ 3.2 fps  infer 307.4 ms  persons 1  LOCKED id 4  box 82% (stop at 99%)  FOLLOW  L+110 R+110
+ 3.2 fps  infer 303.7 ms  persons 1  LOCKED id 4  box 85% (stop at 99%)  FOLLOW  L+107 R+107
+ 3.3 fps  infer 300.9 ms  persons 1  LOCKED id 4  box 90% (stop at 99%)  FOLLOW  L+101 R+101
+ 3.3 fps  infer 295.7 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 295.4 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 299.5 ms  persons 0  SEARCHING id 4 1.0/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 295.2 ms  persons 0  SEARCHING id 4 2.2/10 s  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 295.5 ms  persons 0  SEARCHING id 4 3.5/10 s  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 295.8 ms  persons 0  SEARCHING id 4 4.7/10 s  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 289.7 ms  persons 0  SEARCHING id 4 5.9/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 301.3 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 303.1 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 303.3 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 301.9 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 288.5 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 291.9 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 288.7 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 289.5 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 292.4 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 296.6 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.4 fps  infer 283.2 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 289.2 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 292.9 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 293.6 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 290.6 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 293.5 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 295.9 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 304.2 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 298.1 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 300.0 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 302.3 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 299.5 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 306.9 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 304.8 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 307.0 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 307.4 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 295.0 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 292.7 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 285.7 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 289.8 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 284.9 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 290.9 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 300.1 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 296.3 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 296.0 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 293.8 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 296.5 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 307.0 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 305.6 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 301.0 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 302.4 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 302.5 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 303.4 ms  persons 1  LOCKED id 4  box 96% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 301.4 ms  persons 1  LOCKED id 4  box 87% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 297.4 ms  persons 1  LOCKED id 4  box 84% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 307.8 ms  persons 1  LOCKED id 4  box 85% (stop at 99%)  FOLLOW  L+107 R+107
+ 3.2 fps  infer 307.4 ms  persons 1  LOCKED id 4  box 87% (stop at 99%)  FOLLOW  L+105 R+105
+ 3.2 fps  infer 295.9 ms  persons 1  LOCKED id 4  box 92% (stop at 99%)  FOLLOW  L +99 R +99
+ 3.3 fps  infer 293.9 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 299.5 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 290.7 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 298.3 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 302.1 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 299.4 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 290.0 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 293.5 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 294.7 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 296.7 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 297.3 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 297.6 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 304.8 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 302.6 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 302.8 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 293.2 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 298.4 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 299.8 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 304.6 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 303.5 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 300.6 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 303.6 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 307.1 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 305.8 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 297.6 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 290.8 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 292.2 ms  persons 0  SEARCHING id 4 0.3/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 290.5 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 295.0 ms  persons 0  SEARCHING id 4 0.9/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 292.3 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 297.6 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 311.8 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 317.2 ms  persons 0  SEARCHING id 4 0.7/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 306.0 ms  persons 0  SEARCHING id 4 0.3/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 301.6 ms  persons 0  SEARCHING id 4 1.6/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 312.2 ms  persons 0  SEARCHING id 4 2.9/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 308.2 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 305.4 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 309.1 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 311.0 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 310.1 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 303.7 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 304.5 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 310.8 ms  persons 0  SEARCHING id 4 0.3/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 312.9 ms  persons 0  SEARCHING id 4 1.3/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 300.1 ms  persons 0  SEARCHING id 4 2.6/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 305.2 ms  persons 0  SEARCHING id 4 3.8/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 304.9 ms  persons 0  SEARCHING id 4 5.2/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 307.4 ms  persons 0  SEARCHING id 4 6.5/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 313.6 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 321.8 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 316.9 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 319.2 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 316.0 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 316.8 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 321.8 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.0 fps  infer 327.7 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.0 fps  infer 331.0 ms  persons 1  LOCKED id 4  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.0 fps  infer 327.9 ms  persons 1  LOCKED id 4  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 313.9 ms  persons 0  SEARCHING id 4 1.3/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 311.7 ms  persons 0  SEARCHING id 4 2.6/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 309.0 ms  persons 0  SEARCHING id 4 3.9/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 305.6 ms  persons 0  SEARCHING id 4 5.2/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 314.5 ms  persons 0  SEARCHING id 4 6.6/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 314.6 ms  persons 0  SEARCHING id 4 7.9/10 s  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 323.5 ms  persons 0  SEARCHING id 4 8.9/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 317.7 ms  persons 0  SEARCHING id 4 9.9/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 316.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 322.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 320.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 307.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 299.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 293.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 302.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 312.2 ms  persons 1  LOCKED id 6  box 84% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 313.1 ms  persons 1  LOCKED id 6  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 310.8 ms  persons 0  SEARCHING id 6 0.3/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 314.5 ms  persons 1  SEARCHING id 6 1.3/10 s  reid best 0.68  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 320.3 ms  persons 1  SEARCHING id 6 2.4/10 s  reid best 0.61  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 317.0 ms  persons 0  SEARCHING id 6 0.3/10 s  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 315.0 ms  persons 0  SEARCHING id 6 0.3/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 310.8 ms  persons 0  SEARCHING id 6 1.6/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 306.3 ms  persons 0  SEARCHING id 6 2.9/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 314.8 ms  persons 0  SEARCHING id 6 4.2/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 311.3 ms  persons 0  SEARCHING id 6 5.2/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 308.1 ms  persons 0  SEARCHING id 6 6.5/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 315.0 ms  persons 0  SEARCHING id 6 7.9/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 318.7 ms  persons 0  SEARCHING id 6 8.9/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 317.7 ms  persons 0  SEARCHING id 6 9.9/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 315.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 307.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 304.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 303.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 301.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 294.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 299.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 303.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 303.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 299.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 312.1 ms  persons 1  LOCKED id 9  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 309.1 ms  persons 1  LOCKED id 9  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 303.4 ms  persons 1  LOCKED id 9  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 303.2 ms  persons 1  LOCKED id 9  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 307.7 ms  persons 1  LOCKED id 9  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 295.0 ms  persons 0  SEARCHING id 9 1.2/10 s  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 283.8 ms  persons 0  SEARCHING id 9 2.4/10 s  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 283.0 ms  persons 0  SEARCHING id 9 3.6/10 s  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 298.7 ms  persons 0  SEARCHING id 9 4.9/10 s  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 300.6 ms  persons 0  SEARCHING id 9 5.9/10 s  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 292.1 ms  persons 0  SEARCHING id 9 7.1/10 s  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 292.5 ms  persons 0  SEARCHING id 9 8.3/10 s  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 286.2 ms  persons 0  SEARCHING id 9 9.5/10 s  no person - STOP  L  +0 R  +0
+ 3.5 fps  infer 284.0 ms  persons 1  LOCKED id 9  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.5 fps  infer 281.8 ms  persons 1  LOCKED id 9  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.4 fps  infer 290.3 ms  persons 1  LOCKED id 9  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 298.9 ms  persons 1  LOCKED id 9  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.3 fps  infer 301.6 ms  persons 1  LOCKED id 9  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.4 fps  infer 292.8 ms  persons 0  SEARCHING id 9 0.9/10 s  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 292.8 ms  persons 0  SEARCHING id 9 2.2/10 s  no person - STOP  L  +0 R  +0
+ 3.4 fps  infer 292.7 ms  persons 0  SEARCHING id 9 3.4/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 302.1 ms  persons 0  SEARCHING id 9 4.7/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 302.5 ms  persons 0  SEARCHING id 9 5.7/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 307.1 ms  persons 0  SEARCHING id 9 6.9/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 313.3 ms  persons 0  SEARCHING id 9 8.0/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 303.1 ms  persons 0  SEARCHING id 9 9.3/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 305.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 307.9 ms  persons 1  LOCKED id 10  box 92% (stop at 99%)  STOP  L  +0 R  +0
+ 3.2 fps  infer 319.4 ms  persons 1  LOCKED id 10  box 93% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 320.1 ms  persons 0  SEARCHING id 10 0.7/10 s  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 315.4 ms  persons 1  SEARCHING id 10 1.7/10 s  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 311.4 ms  persons 1  SEARCHING id 10 3.0/10 s  reid best 0.63  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 310.3 ms  persons 0  SEARCHING id 10 4.3/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 306.8 ms  persons 1  SEARCHING id 10 5.6/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 314.4 ms  persons 0  SEARCHING id 10 6.7/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 313.6 ms  persons 0  SEARCHING id 10 7.7/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 314.3 ms  persons 0  SEARCHING id 10 9.0/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 315.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 315.0 ms  persons 0  SEARCHING id 12 0.3/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 316.2 ms  persons 0  SEARCHING id 12 1.3/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 314.4 ms  persons 0  SEARCHING id 12 2.7/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 300.9 ms  persons 0  SEARCHING id 12 3.9/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 298.3 ms  persons 0  SEARCHING id 12 5.1/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 303.2 ms  persons 0  SEARCHING id 12 6.4/10 s  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 308.0 ms  persons 0  SEARCHING id 12 7.4/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 312.4 ms  persons 0  SEARCHING id 12 8.8/10 s  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 309.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 306.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 309.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.3 fps  infer 306.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 311.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 310.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 309.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 311.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 316.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 320.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 316.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 319.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 320.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 317.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 326.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.2 fps  infer 314.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 320.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.1 fps  infer 333.8 ms  persons 1  LOCKED id 13  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 328.4 ms  persons 1  LOCKED id 13  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.0 fps  infer 332.2 ms  persons 1  LOCKED id 13  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 324.1 ms  persons 1  LOCKED id 13  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.1 fps  infer 316.5 ms  persons 1  LOCKED id 13  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.0 fps  infer 333.7 ms  persons 1  LOCKED id 13  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.0 fps  infer 341.4 ms  persons 1  LOCKED id 13  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 3.0 fps  infer 339.3 ms  persons 1  LOCKED id 13  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 3.0 fps  infer 334.6 ms  persons 0  SEARCHING id 13 0.7/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 338.3 ms  persons 0  SEARCHING id 13 1.8/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 336.9 ms  persons 0  SEARCHING id 13 2.8/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 330.5 ms  persons 0  SEARCHING id 13 3.9/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 327.0 ms  persons 0  SEARCHING id 13 4.9/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 331.8 ms  persons 0  SEARCHING id 13 6.0/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 344.1 ms  persons 0  SEARCHING id 13 7.0/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 342.6 ms  persons 0  SEARCHING id 13 8.2/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 336.6 ms  persons 0  SEARCHING id 13 0.7/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 335.0 ms  persons 0  SEARCHING id 13 1.8/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 335.7 ms  persons 0  SEARCHING id 13 2.9/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 331.9 ms  persons 0  SEARCHING id 13 3.9/10 s  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 344.4 ms  persons 0  SEARCHING id 13 4.9/10 s  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 354.7 ms  persons 0  SEARCHING id 13 6.1/10 s  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 346.8 ms  persons 0  SEARCHING id 13 7.3/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 333.8 ms  persons 0  SEARCHING id 13 8.3/10 s  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 343.7 ms  persons 0  SEARCHING id 13 9.4/10 s  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 327.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 337.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 345.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 342.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 345.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 345.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 338.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 325.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 329.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 335.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 337.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 342.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 358.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 353.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 347.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 343.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 357.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 359.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 362.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 358.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 356.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 366.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 358.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 338.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 343.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 345.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 355.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 354.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 357.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 359.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 358.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 354.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 355.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 348.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 344.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 342.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 343.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 357.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 347.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 346.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 347.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 350.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 361.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 361.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 359.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 363.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 348.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 343.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 346.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 346.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 340.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 343.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 353.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 352.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 349.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 354.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 353.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 352.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 356.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 352.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 344.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 354.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 356.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 362.0 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 358.0 ms  persons 1  LOCKED id 16  box 59% (stop at 99%)  FOLLOW  L+138 R+138
+ 2.8 fps  infer 352.7 ms  persons 1  LOCKED id 16  box 46% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.7 fps  infer 361.0 ms  persons 1  LOCKED id 16  box 50% (stop at 99%)  FOLLOW  L+149 R+149
+ 2.7 fps  infer 378.8 ms  persons 1  LOCKED id 16  box 82% (stop at 99%)  FOLLOW  L+110 R+110
+ 2.7 fps  infer 368.9 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 350.1 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 345.5 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 344.1 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 347.5 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 355.0 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 364.0 ms  persons 1  LOCKED id 16  box 51% (stop at 99%)  FOLLOW  L+148 R+148
+ 2.7 fps  infer 370.8 ms  persons 1  LOCKED id 16  box 61% (stop at 99%)  FOLLOW  L+136 R+136
+ 2.7 fps  infer 364.9 ms  persons 1  LOCKED id 16  box 78% (stop at 99%)  FOLLOW  L+115 R+115
+ 2.7 fps  infer 372.0 ms  persons 1  LOCKED id 16  box 81% (stop at 99%)  FOLLOW  L+111 R+111
+ 2.6 fps  infer 381.1 ms  persons 1  LOCKED id 16  box 96% (stop at 99%)  FOLLOW  L +93 R +93
+ 2.7 fps  infer 371.5 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 372.6 ms  persons 1  LOCKED id 16  box 85% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 370.0 ms  persons 1  LOCKED id 16  box 85% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 369.5 ms  persons 1  LOCKED id 16  box 84% (stop at 99%)  FOLLOW  L+109 R+109
+ 2.7 fps  infer 370.0 ms  persons 1  LOCKED id 16  box 86% (stop at 99%)  FOLLOW  L+106 R+106
+ 2.7 fps  infer 364.5 ms  persons 1  LOCKED id 16  box 99% (stop at 99%)  FOLLOW  L  +0 R  +0
+ 2.7 fps  infer 368.1 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 366.2 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 372.0 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 372.3 ms  persons 1  LOCKED id 16  box 82% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 367.1 ms  persons 1  LOCKED id 16  box 75% (stop at 99%)  FOLLOW  L+119 R+119
+ 2.7 fps  infer 360.7 ms  persons 1  LOCKED id 16  box 91% (stop at 99%)  FOLLOW  L+100 R+100
+ 2.7 fps  infer 355.7 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 359.9 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 353.5 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 353.3 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 354.6 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 356.4 ms  persons 1  LOCKED id 16  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 357.1 ms  persons 1  LOCKED id 16  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 357.6 ms  persons 0  SEARCHING id 16 1.2/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 360.0 ms  persons 0  SEARCHING id 16 2.3/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 361.1 ms  persons 0  SEARCHING id 16 3.4/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 351.4 ms  persons 0  SEARCHING id 16 4.5/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 363.1 ms  persons 0  SEARCHING id 16 5.7/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 370.7 ms  persons 0  SEARCHING id 16 6.9/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 357.4 ms  persons 0  SEARCHING id 16 8.0/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 360.9 ms  persons 0  SEARCHING id 16 9.2/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 360.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 358.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 359.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 359.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 356.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 353.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 358.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 363.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 373.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 365.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 370.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 371.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 373.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 365.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 369.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 367.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 363.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 365.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 354.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 366.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 362.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 363.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 367.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 369.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 359.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 356.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 357.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 359.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 364.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 370.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 370.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 366.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 367.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 365.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 367.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 383.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 380.8 ms  persons 1  LOCKED id 17  box 67% (stop at 99%)  FOLLOW  L+128 R+128
+ 2.6 fps  infer 375.1 ms  persons 1  LOCKED id 17  box 77% (stop at 99%)  FOLLOW  L+116 R+116
+ 2.6 fps  infer 378.5 ms  persons 1  LOCKED id 17  box 97% (stop at 99%)  FOLLOW  L +92 R +92
+ 2.6 fps  infer 371.2 ms  persons 1  LOCKED id 17  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 379.6 ms  persons 1  LOCKED id 17  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 379.5 ms  persons 1  LOCKED id 17  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 368.9 ms  persons 1  LOCKED id 17  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 358.2 ms  persons 1  LOCKED id 17  box 95% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 359.2 ms  persons 1  LOCKED id 17  box 84% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 365.3 ms  persons 1  LOCKED id 17  box 79% (stop at 99%)  FOLLOW  L+114 R+114
+ 2.6 fps  infer 369.4 ms  persons 1  LOCKED id 17  box 89% (stop at 99%)  FOLLOW  L+102 R+102
+ 2.7 fps  infer 365.7 ms  persons 1  LOCKED id 17  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 362.0 ms  persons 0  SEARCHING id 17 1.1/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 359.7 ms  persons 0  SEARCHING id 17 2.3/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 367.9 ms  persons 0  SEARCHING id 17 3.4/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 363.8 ms  persons 0  SEARCHING id 17 4.6/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 367.7 ms  persons 0  SEARCHING id 17 5.7/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 361.8 ms  persons 0  SEARCHING id 17 6.9/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 366.8 ms  persons 0  SEARCHING id 17 8.0/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 365.2 ms  persons 0  SEARCHING id 17 9.2/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 374.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 364.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 363.6 ms  persons 1  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 375.5 ms  persons 1  LOCKED id 20  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 380.3 ms  persons 1  LOCKED id 20  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 379.0 ms  persons 1  LOCKED id 20  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 373.3 ms  persons 0  SEARCHING id 20 0.8/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 372.5 ms  persons 0  SEARCHING id 20 2.0/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 367.0 ms  persons 0  SEARCHING id 20 3.1/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 372.8 ms  persons 0  SEARCHING id 20 4.3/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 372.6 ms  persons 0  SEARCHING id 20 5.5/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 362.3 ms  persons 0  SEARCHING id 20 6.6/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 358.4 ms  persons 0  SEARCHING id 20 7.7/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 359.5 ms  persons 0  SEARCHING id 20 8.9/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 370.4 ms  persons 1  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 375.1 ms  persons 1  LOCKED id 21  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 376.8 ms  persons 0  SEARCHING id 21 0.4/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 372.3 ms  persons 0  SEARCHING id 21 1.6/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 359.7 ms  persons 0  SEARCHING id 21 2.7/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 368.9 ms  persons 0  SEARCHING id 21 4.0/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 366.4 ms  persons 0  SEARCHING id 21 5.1/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 357.2 ms  persons 0  SEARCHING id 21 6.2/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 363.0 ms  persons 0  SEARCHING id 21 7.3/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 375.4 ms  persons 1  SEARCHING id 21 8.6/10 s  reid best 0.82  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 366.9 ms  persons 1  SEARCHING id 21 9.8/10 s  reid best 0.85  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 379.3 ms  persons 0  SEARCHING id 23 0.4/10 s  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 379.7 ms  persons 0  SEARCHING id 23 1.7/10 s  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 383.4 ms  persons 1  SEARCHING id 23 2.9/10 s  reid best 0.44  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 386.0 ms  persons 0  SEARCHING id 23 4.1/10 s  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 396.2 ms  persons 0  SEARCHING id 23 5.4/10 s  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 387.8 ms  persons 1  SEARCHING id 23 6.7/10 s  reid best 0.45  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 380.2 ms  persons 0  SEARCHING id 23 7.9/10 s  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 381.3 ms  persons 1  SEARCHING id 23 9.1/10 s  reid best 0.54  no person - STOP  L  +0 R  +0
+ 2.5 fps  infer 390.2 ms  persons 1  LOCKED id 32  box 53% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 380.6 ms  persons 1  LOCKED id 32  box 32% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.6 fps  infer 374.0 ms  persons 0  SEARCHING id 32 0.8/10 s  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 374.2 ms  persons 0  SEARCHING id 32 2.0/10 s  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 374.8 ms  persons 1  SEARCHING id 32 3.2/10 s  reid best 0.50  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 375.9 ms  persons 1  SEARCHING id 32 4.4/10 s  reid best 0.47  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 379.3 ms  persons 1  SEARCHING id 32 5.6/10 s  reid best 0.43  no person - STOP  L  +0 R  +0
+ 2.5 fps  infer 423.7 ms  persons 1  SEARCHING id 32 7.0/10 s  reid best 0.59  no person - STOP  L  +0 R  +0
+ 2.5 fps  infer 404.0 ms  persons 0  SEARCHING id 32 8.3/10 s  no person - STOP  L  +0 R  +0
+ 2.5 fps  infer 392.4 ms  persons 1  SEARCHING id 32 9.5/10 s  reid best 0.45  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 379.3 ms  persons 1  LOCKED id 38  box 37% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.6 fps  infer 382.1 ms  persons 1  LOCKED id 38  box 43% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.6 fps  infer 380.9 ms  persons 1  LOCKED id 38  box 41% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.6 fps  infer 380.7 ms  persons 1  LOCKED id 38  box 40% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.5 fps  infer 391.0 ms  persons 1  LOCKED id 38  box 44% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.6 fps  infer 384.3 ms  persons 1  LOCKED id 38  box 52% (stop at 99%)  FOLLOW  L+146 R+146
+ 2.5 fps  infer 386.7 ms  persons 1  LOCKED id 38  box 53% (stop at 99%)  FOLLOW  L+146 R+146
+ 2.6 fps  infer 378.8 ms  persons 1  LOCKED id 38  box 36% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.6 fps  infer 379.6 ms  persons 1  LOCKED id 38  box 82% (stop at 99%)  FOLLOW  L+111 R+111
+ 2.5 fps  infer 383.4 ms  persons 1  LOCKED id 38  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.5 fps  infer 390.1 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.4 fps  infer 424.8 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.4 fps  infer 437.5 ms  persons 1  LOCKED id 38  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.4 fps  infer 405.4 ms  persons 1  LOCKED id 38  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.4 fps  infer 393.2 ms  persons 1  LOCKED id 38  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.5 fps  infer 384.8 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.5 fps  infer 376.6 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.5 fps  infer 375.2 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.5 fps  infer 380.2 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.5 fps  infer 373.5 ms  persons 1  LOCKED id 38  box 98% (stop at 99%)  STOP  L  +0 R  +0
+ 2.5 fps  infer 372.5 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 364.9 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 365.0 ms  persons 1  LOCKED id 38  box 98% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 360.7 ms  persons 1  LOCKED id 38  box 98% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 366.5 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 360.7 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 361.3 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 357.1 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 349.7 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 365.5 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 373.2 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 370.3 ms  persons 1  LOCKED id 38  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 374.0 ms  persons 1  LOCKED id 38  box 75% (stop at 99%)  STOP  L  +0 R  +0
+ 2.5 fps  infer 388.7 ms  persons 1  LOCKED id 38  box 40% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.5 fps  infer 385.3 ms  persons 1  LOCKED id 38  box 38% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.6 fps  infer 381.9 ms  persons 0  SEARCHING id 38 0.4/10 s  no person - STOP  L  +0 R  +0
+ 2.6 fps  infer 366.0 ms  persons 0  SEARCHING id 38 1.6/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 358.4 ms  persons 0  SEARCHING id 38 2.6/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 365.3 ms  persons 0  SEARCHING id 38 3.8/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 359.1 ms  persons 0  SEARCHING id 38 4.9/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 349.9 ms  persons 0  SEARCHING id 38 6.0/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 352.6 ms  persons 0  SEARCHING id 38 7.1/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 352.1 ms  persons 0  SEARCHING id 38 8.3/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 352.2 ms  persons 0  SEARCHING id 38 9.4/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 353.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 353.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 360.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 363.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 356.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 351.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 350.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 344.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 355.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 354.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 357.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 352.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 348.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 353.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 353.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 353.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 358.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 359.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 351.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 347.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 342.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 342.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 341.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 348.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 349.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 331.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 341.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 337.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 335.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 335.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 331.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 325.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 325.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 329.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 339.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 336.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 332.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 335.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 330.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 3.0 fps  infer 342.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 353.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 352.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 351.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 420.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 399.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 373.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 366.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 361.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 363.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 365.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 358.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 360.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 359.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 357.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 365.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 365.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 360.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 363.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 360.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 362.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 366.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 361.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 358.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 357.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 348.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 348.9 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 338.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 345.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 352.0 ms  persons 1  LOCKED id 39  box 48% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.8 fps  infer 359.6 ms  persons 1  LOCKED id 39  box 36% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.7 fps  infer 371.7 ms  persons 1  LOCKED id 39  box 40% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.7 fps  infer 375.6 ms  persons 1  LOCKED id 39  box 46% (stop at 99%)  FOLLOW  L+150 R+150
+ 2.7 fps  infer 368.9 ms  persons 1  SEARCHING id 39 0.8/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 364.5 ms  persons 2  LOCKED id 39  box 64% (stop at 99%)  FOLLOW  L+132 R+132
+ 2.7 fps  infer 369.6 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  FOLLOW  L  +0 R  +0
+ 2.7 fps  infer 366.0 ms  persons 1  LOCKED id 39  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 364.5 ms  persons 1  LOCKED id 39  box 100% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 365.0 ms  persons 0  SEARCHING id 39 0.8/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 359.1 ms  persons 0  SEARCHING id 39 1.9/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 357.4 ms  persons 0  SEARCHING id 39 3.0/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 352.7 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 369.4 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 358.7 ms  persons 0  SEARCHING id 39 0.4/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 368.2 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 354.8 ms  persons 1  LOCKED id 39  box 64% (stop at 99%)  FOLLOW  L+132 R+132
+ 2.7 fps  infer 354.2 ms  persons 1  LOCKED id 39  box 63% (stop at 99%)  FOLLOW  L+134 R+134
+ 2.7 fps  infer 374.1 ms  persons 1  LOCKED id 39  box 65% (stop at 99%)  FOLLOW  L+132 R+132
+ 2.7 fps  infer 374.8 ms  persons 1  LOCKED id 39  box 65% (stop at 99%)  FOLLOW  L+131 R+131
+ 2.6 fps  infer 378.7 ms  persons 1  LOCKED id 39  box 67% (stop at 99%)  FOLLOW  L+129 R+129
+ 2.6 fps  infer 376.6 ms  persons 0  SEARCHING id 39 0.4/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 362.2 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 357.1 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 364.3 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 367.8 ms  persons 0  SEARCHING id 39 0.8/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 359.7 ms  persons 0  SEARCHING id 39 1.9/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 349.4 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 350.3 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 358.4 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 361.3 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 359.1 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 360.3 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 372.8 ms  persons 1  LOCKED id 39  box 96% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 368.3 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 360.0 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 353.7 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 360.7 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 367.9 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 361.2 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 359.0 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 358.5 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 357.5 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 341.2 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 354.2 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 351.8 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 359.4 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 359.8 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 349.6 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 357.7 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 353.6 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 355.3 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 357.8 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 355.1 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 355.0 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 351.6 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 369.8 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 364.7 ms  persons 1  LOCKED id 39  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 367.1 ms  persons 1  LOCKED id 39  box 95% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 371.6 ms  persons 1  LOCKED id 39  box 95% (stop at 99%)  STOP  L  +0 R  +0
+ 2.6 fps  infer 364.2 ms  persons 1  LOCKED id 39  box 98% (stop at 99%)  STOP  L  +0 R  +0
+ 2.7 fps  infer 361.4 ms  persons 0  SEARCHING id 39 0.8/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 356.6 ms  persons 0  SEARCHING id 39 1.9/10 s  no person - STOP  L  +0 R  +0
+ 2.7 fps  infer 356.5 ms  persons 0  SEARCHING id 39 3.0/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 345.1 ms  persons 0  SEARCHING id 39 4.1/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 353.2 ms  persons 0  SEARCHING id 39 5.2/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 356.1 ms  persons 0  SEARCHING id 39 6.4/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 348.2 ms  persons 0  SEARCHING id 39 7.5/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 356.8 ms  persons 0  SEARCHING id 39 8.6/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 365.5 ms  persons 0  SEARCHING id 39 9.8/10 s  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 362.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 351.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 358.7 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 361.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 352.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 348.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 341.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 346.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 345.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 348.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 356.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 364.6 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 364.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 351.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 340.5 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 344.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 343.8 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 349.0 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 353.1 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 353.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 343.4 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 342.2 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 348.3 ms  persons 0  NO TARGET  no person - STOP  L  +0 R  +0
+ 2.8 fps  infer 358.1 ms  persons 1  LOCKED id 44  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 355.1 ms  persons 1  LOCKED id 44  box 98% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 349.4 ms  persons 1  LOCKED id 44  box 99% (stop at 99%)  STOP  L  +0 R  +0
+ 2.8 fps  infer 344.3 ms  persons 0  SEARCHING id 44 0.3/10 s  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 338.1 ms  persons 0  SEARCHING id 44 1.4/10 s  no person - STOP  L  +0 R  +0
+ 2.9 fps  infer 340.2 ms  persons 0  SEARCHING id 44 2.5/10 s  no person - STOP  L  +0 R  +0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            

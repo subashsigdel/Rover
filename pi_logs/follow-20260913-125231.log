@@ -1,0 +1,176 @@
+# follow  2026-09-13 12:52:31  rpi5  temp=66.6'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --port auto
+feet distance: off (calibrate with --cam-height to follow closer than ~2 m)
+calibration: 473 px at 2.0 m, saved 2026-09-13 11:58
+follow_rover: model=auto imgsz=320 source=usb transport=tcp cap=640x480 flip=False acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 cam_height=0.0 ref_dist=2.0 ref_height=472.9 vfov=50.0 port=auto max_pwm=150 min_pwm=90 steer=False stop_dist=1.2 start_dist=1.6 hold=1.5 calibrate=False show=False view=8080
+webcam: /dev/video0 640x480 @ 25 fps
+camera started: usb
+model loaded yolo11n_192x320.onnx, input [192, 320]
+rover link /dev/ttyUSB0 (ESP32 firmware answered)
+live view: http://<pi-address>:8080/
+Loading yolo11n_192x320.onnx for ONNX Runtime inference...
+Using ONNX Runtime 1.30.0 with CPUExecutionProvider
+ 0.0 fps  infer 4421.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 0.4 fps  infer 3586.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.8 fps  infer 1605.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 682.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 385.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.6 fps  infer 298.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.9 fps  infer 252.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 4.0 fps  infer 246.6 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 4.1 fps  infer 240.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 4.1 fps  infer 240.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 4.2 fps  infer 238.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 4.1 fps  infer 241.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 4.1 fps  infer 246.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 4.0 fps  infer 256.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.9 fps  infer 261.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.9 fps  infer 263.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.8 fps  infer 266.5 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.7 fps  infer 275.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.7 fps  infer 270.6 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.7 fps  infer 276.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.7 fps  infer 274.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.6 fps  infer 275.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.6 fps  infer 277.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.6 fps  infer 283.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 291.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 288.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 291.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 294.6 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 308.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 306.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 299.8 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 293.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 290.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 288.6 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 284.8 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 276.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 281.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 296.6 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 304.6 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 301.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 288.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 287.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 292.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 289.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 286.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 288.8 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 288.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 297.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 294.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 299.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 295.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 293.8 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 292.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 290.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 303.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 303.8 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 303.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 304.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 303.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 302.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 302.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 303.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 301.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 304.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 306.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 308.5 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 299.6 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 314.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 320.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 313.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 302.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 299.5 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 287.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 286.6 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 296.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 304.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 305.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 311.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 311.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 308.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 308.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.1 fps  infer 345.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.1 fps  infer 322.5 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 309.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 301.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 306.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 306.8 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 308.6 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 301.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 301.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 312.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 317.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 308.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 302.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 321.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 304.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 304.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 299.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 292.5 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 289.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 291.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 296.5 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 294.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 298.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 308.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 306.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 304.6 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 303.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 308.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 297.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 288.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 299.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 299.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 294.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 293.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 302.8 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 305.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 304.7 ms  persons 1  LOCKED id 1  right next to the rover - STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 305.5 ms  persons 1  LOCKED id 1  right next to the rover - STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 310.7 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.1 fps  infer 324.6 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 339.2 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 341.6 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 332.4 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 330.2 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 321.1 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 323.8 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 320.5 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 326.3 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 332.2 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 329.8 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 335.8 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 339.9 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 341.2 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 348.7 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 337.7 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 334.7 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 328.7 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 331.6 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 329.3 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 339.6 ms  persons 1  LOCKED id 1  edge cut, holding  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 347.8 ms  persons 1  LOCKED id 1  4.02 m  FOLLOW  steer +0.00 thr +1.00  L+150 R+150  
+ 2.8 fps  infer 350.2 ms  persons 1  LOCKED id 1  4.43 m  FOLLOW  steer +0.00 thr +1.00  L+150 R+150  
+ 2.8 fps  infer 350.6 ms  persons 1  LOCKED id 1  4.25 m  FOLLOW  steer +0.00 thr +1.00  L+150 R+150  
+ 2.8 fps  infer 354.5 ms  persons 1  LOCKED id 1  3.93 m (from width)  STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 347.3 ms  persons 1  LOCKED id 1  3.87 m (from width)  STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 355.5 ms  persons 1  LOCKED id 1  3.66 m (from width)  STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 361.6 ms  persons 1  LOCKED id 1  3.36 m (from width)  STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 350.6 ms  persons 1  LOCKED id 1  3.50 m (from width)  STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 355.5 ms  persons 1  LOCKED id 1  2.86 m (from width)  STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 353.1 ms  persons 0  SEARCHING id 1 0.8/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 357.5 ms  persons 1  LOCKED id 1  right next to the rover - STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 352.8 ms  persons 0  SEARCHING id 1 1.1/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 342.9 ms  persons 0  SEARCHING id 1 2.2/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 335.7 ms  persons 0  SEARCHING id 1 3.2/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 336.0 ms  persons 0  SEARCHING id 1 0.4/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 341.5 ms  persons 1  LOCKED id 1  right next to the rover - STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 342.8 ms  persons 1  LOCKED id 1  right next to the rover - STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 353.6 ms  persons 1  LOCKED id 1  1.84 m (from width)  STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 364.6 ms  persons 1  LOCKED id 1  2.15 m (from width)  STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.7 fps  infer 361.2 ms  persons 1  LOCKED id 1  2.41 m (from width)  STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.7 fps  infer 358.1 ms  persons 1  LOCKED id 1  2.31 m (from width)  STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 355.8 ms  persons 1  LOCKED id 1  2.11 m (from width)  STOP  steer +0.00 thr +0.00  L  +0 R  +0  
+                                                                                                                                                                                                                                 

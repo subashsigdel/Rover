@@ -1,0 +1,36 @@
+# follow  2026-09-11 14:55:09  rpi5  temp=58.0'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --source rtsp://192.168.1.11:554 --calibrate --ref-dist 2
+follow_rover: model=yolo11n.pt imgsz=320 source=rtsp://192.168.1.11:554 transport=tcp cap=640x480 flip=False rotate=cw acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 target_dist=2.0 ref_dist=2.0 ref_height=0.0 vfov=50.0 port=None max_pwm=150 min_pwm=90 hold=1.5 calibrate=True show=False view=8080
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+camera started: rtsp://192.168.1.11:554
+model loaded yolo11n.pt
+no rover link - dry run, motors not driven
+live view: http://<pi-address>:8080/
+ 0.0 fps  infer 3000.4 ms  persons 1  LOCKED id 1  3.44 m  steer -0.27 thr +1.00  L+124 R+150  calibrating
+ 0.1 fps  infer 2540.4 ms  persons 1  LOCKED id 1  3.38 m  steer -0.26 thr +0.97  L+124 R+150  calibrating
+ 0.4 fps  infer 1845.9 ms  persons 1  LOCKED id 1  3.44 m  steer -0.26 thr +1.00  L+125 R+150  calibrating
+ 0.7 fps  infer 1399.8 ms  persons 1  LOCKED id 1  3.46 m  steer -0.28 thr +1.00  L+123 R+150  calibrating
+ 0.8 fps  infer 1113.0 ms  persons 1  LOCKED id 1  3.43 m  steer -0.28 thr +1.00  L+123 R+150  calibrating
+ 1.0 fps  infer 930.3 ms  persons 1  LOCKED id 1  3.44 m  steer -0.28 thr +1.00  L+123 R+150  calibrating
+ 1.1 fps  infer 812.2 ms  persons 1  LOCKED id 1  3.46 m  steer -0.28 thr +1.00  L+123 R+150  calibrating
+ 1.2 fps  infer 738.8 ms  persons 1  LOCKED id 1  3.44 m  steer -0.28 thr +1.00  L+123 R+150  calibrating
+ 1.3 fps  infer 693.1 ms  persons 1  LOCKED id 1  3.09 m  steer -0.37 thr +0.74  L+109 R+150  calibrating
+ 1.4 fps  infer 661.3 ms  persons 1  LOCKED id 1  2.54 m  steer -0.19 thr +0.34  L +99 R+121  calibrating
+ 1.4 fps  infer 639.1 ms  persons 1  LOCKED id 1  clipped (whole body must be in frame)  steer -0.39 thr -0.25  L-128 R +98  calibrating
+ 1.5 fps  infer 626.0 ms  persons 1  LOCKED id 1  clipped (whole body must be in frame)  steer -0.42 thr -0.25  L-130 R+100  calibrating
+ 1.5 fps  infer 616.4 ms  persons 1  LOCKED id 1  clipped (whole body must be in frame)  steer -0.24 thr -0.25  L-119 R  +0  calibrating
+ 1.5 fps  infer 612.2 ms  persons 1  LOCKED id 1  clipped (whole body must be in frame)  steer -0.24 thr -0.25  L-119 R  +0  calibrating
+ 1.5 fps  infer 607.3 ms  persons 1  LOCKED id 1  2.83 m  steer -0.39 thr +0.63  L+104 R+150  calibrating
+ 1.6 fps  infer 604.7 ms  persons 1  LOCKED id 1  3.36 m  steer -0.37 thr +0.98  L+117 R+150  calibrating
+ 1.6 fps  infer 602.4 ms  persons 1  LOCKED id 1  3.58 m  steer -0.42 thr +1.00  L+114 R+150  calibrating
+ 1.6 fps  infer 600.9 ms  persons 1  LOCKED id 1  3.63 m  steer -0.53 thr +1.00  L+108 R+150  calibrating
+ 1.6 fps  infer 598.4 ms  persons 1  LOCKED id 1  3.59 m  steer -0.38 thr +1.00  L+116 R+150  calibrating
+ 1.6 fps  infer 598.2 ms  persons 1  LOCKED id 1  3.55 m  steer -0.35 thr +1.00  L+119 R+150  calibrating
+ 1.6 fps  infer 598.0 ms  persons 1  LOCKED id 1  3.53 m  steer -0.34 thr +1.00  L+119 R+150  calibrating
+ 1.6 fps  infer 595.3 ms  persons 1  LOCKED id 1  3.53 m  steer -0.34 thr +1.00  L+119 R+150  calibrating
+ 1.6 fps  infer 594.3 ms  persons 1  LOCKED id 1  3.52 m  steer -0.34 thr +1.00  L+119 R+150  calibrating
+ 1.6 fps  infer 594.5 ms  persons 1  LOCKED id 1  3.53 m  steer -0.34 thr +1.00  L+119 R+150  calibrating
+ 1.7 fps  infer 593.4 ms  persons 1  LOCKED id 1  3.54 m  steer -0.34 thr +1.00  L+119 R+150  calibrating
+ 1.7 fps  infer 595.0 ms  persons 1  LOCKED id 1  3.51 m  steer -0.35 thr +1.00  L+119 R+150  calibrating
+ 1.6 fps  infer 616.7 ms  persons 1  LOCKED id 1  3.50 m  steer -0.35 thr +1.00  L+118 R+150  calibrating
+# exit 0  2026-09-11 14:56:13

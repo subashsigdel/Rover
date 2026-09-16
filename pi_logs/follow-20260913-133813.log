@@ -1,0 +1,14 @@
+# follow  2026-09-13 13:38:13  rpi5  temp=55.8'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --port auto --stop-dist 30in --start-dist 45in
+feet distance: camera 15 in high, tilted 14.2 deg down, feet in view from 26 in
+calibration: 1586 px at 0.914 m, saved 2026-09-13 13:34
+follow_rover: model=auto imgsz=320 source=usb transport=tcp cap=640x480 flip=False acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 cam_height=0in ref_dist=36in ref_height=1586.4 vfov=50.0 port=auto max_pwm=150 min_pwm=90 steer=False stop_dist=30in start_dist=45in hold=1.5 calibrate=False show=False view=8080
+distances: stop within 30 in, start following beyond 45 in
+webcam: /dev/video0 640x480 @ 25 fps
+camera started: usb
+model loaded yolo11n_192x320.onnx, input [192, 320]
+rover link /dev/ttyUSB0 (ESP32 firmware answered)
+live view: http://<pi-address>:8080/
+Loading yolo11n_192x320.onnx for ONNX Runtime inference...
+Using ONNX Runtime 1.30.0 with CPUExecutionProvider
+# exit 0  2026-09-13 13:43:56

@@ -1,0 +1,208 @@
+# follow  2026-09-11 16:03:22  rpi5  temp=45.1'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --source rtsp://192.168.1.11:554 --port auto --ref-dist 2 --ref-height 379
+follow_rover: model=auto imgsz=320 source=rtsp://192.168.1.11:554 transport=tcp cap=640x480 flip=False rotate=cw acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 target_dist=2.0 ref_dist=2.0 ref_height=379.0 vfov=50.0 port=auto max_pwm=150 min_pwm=90 steer=False band=0.3 hold=1.5 calibrate=False show=False view=8080
+[ WARN:0@23.426] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+stream: cannot open rtsp://192.168.1.11:554 (attempt 1), retrying
+[ WARN:0@27.490] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+camera started: rtsp://192.168.1.11:554
+model loaded yolo11n_320x192.onnx, input [320, 192]
+rover link /dev/ttyUSB1 (ESP32 firmware answered)
+live view: http://<pi-address>:8080/
+Loading yolo11n_320x192.onnx for ONNX Runtime inference...
+stream: dropping late frames (0.7 s behind)
+Using ONNX Runtime 1.30.0 with CPUExecutionProvider
+stream: dropping late frames (1.6 s behind)
+stream: dropping late frames (2.0 s behind)
+stream: dropping late frames (0.5 s behind)
+stream: dropping late frames (1.1 s behind)
+stream: dropping late frames (1.7 s behind)
+stream: dropping late frames (0.7 s behind)
+[ WARN:0@61.639] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2003.224625 ms
+stream: dropping late frames (2.3 s behind)
+stream: dropping late frames (4.2 s behind)
+stream: dropping late frames (2.8 s behind)
+ 0.0 fps  infer 5082.0 ms  persons 1  LOCKED id 1  2.27 m  steer +0.00 thr +0.00  L  +0 R  +0  
+WARNING no camera frame for 2.8 s - motors stopped
+stream: dropping late frames (1.8 s behind)
+WARNING no camera frame for 3.8 s - motors stopped
+ 0.2 fps  infer 4144.1 ms  persons 1  LOCKED id 1  2.00 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.2 fps  infer 2250.2 ms  persons 2  LOCKED id 1  1.96 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.0 fps  infer 1089.9 ms  persons 2  LOCKED id 1  1.96 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.6 fps  infer 597.1 ms  persons 2  LOCKED id 1  1.78 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 402.2 ms  persons 2  LOCKED id 1  1.73 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.3 fps  infer 313.8 ms  persons 2  LOCKED id 1  1.84 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 283.8 ms  persons 2  LOCKED id 1  1.86 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.6 fps  infer 270.8 ms  persons 2  LOCKED id 1  1.88 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.6 fps  infer 268.6 ms  persons 2  LOCKED id 1  1.92 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.8 fps  infer 254.5 ms  persons 2  LOCKED id 1  2.07 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.8 fps  infer 253.9 ms  persons 2  LOCKED id 1  2.41 m  steer +0.00 thr +0.32  L+109 R+109  
+ 3.8 fps  infer 256.8 ms  persons 2  LOCKED id 1  2.72 m  steer +0.00 thr +0.53  L+121 R+121  
+WARNING no camera frame for 1.0 s - motors stopped
+WARNING no camera frame for 2.0 s - motors stopped
+[ WARN:0@81.268] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2046.309871 ms
+stream: dropping late frames (2.0 s behind)
+WARNING no camera frame for 3.0 s - motors stopped
+WARNING no camera frame for 4.0 s - motors stopped
+[ WARN:0@83.294] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2014.226326 ms
+stream: lost, reconnecting
+WARNING no camera frame for 5.0 s - motors stopped
+WARNING no camera frame for 6.0 s - motors stopped
+WARNING no camera frame for 7.0 s - motors stopped
+WARNING no camera frame for 8.0 s - motors stopped
+WARNING no camera frame for 9.0 s - motors stopped
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+WARNING no camera frame for 10.0 s - motors stopped
+ 3.8 fps  infer 287.2 ms  persons 1  SEARCHING id 1 9.9/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.8 fps  infer 274.0 ms  persons 3  LOCKED id 2  5.55 m  steer +0.00 thr +1.00  L+150 R+150  
+ 3.9 fps  infer 256.0 ms  persons 2  LOCKED id 2  5.09 m  steer +0.00 thr +1.00  L+150 R+150  
+WARNING no camera frame for 1.0 s - motors stopped
+[ WARN:0@93.489] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2002.966094 ms
+stream: dropping late frames (1.9 s behind)
+WARNING no camera frame for 2.0 s - motors stopped
+WARNING no camera frame for 3.0 s - motors stopped
+[ WARN:0@95.501] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2002.664036 ms
+stream: lost, reconnecting
+WARNING no camera frame for 4.0 s - motors stopped
+WARNING no camera frame for 5.0 s - motors stopped
+WARNING no camera frame for 6.1 s - motors stopped
+WARNING no camera frame for 7.1 s - motors stopped
+WARNING no camera frame for 8.1 s - motors stopped
+WARNING no camera frame for 9.1 s - motors stopped
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+ 3.7 fps  infer 315.6 ms  persons 1  SEARCHING id 2 9.8/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 344.3 ms  persons 3  LOCKED id 5  2.84 m  steer +0.00 thr +0.59  L+125 R+125  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.6 s behind)
+ 3.6 fps  infer 303.4 ms  persons 3  LOCKED id 5  2.45 m  steer +0.00 thr +0.30  L+107 R+107  
+ 3.6 fps  infer 286.3 ms  persons 2  LOCKED id 5  1.86 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.6 fps  infer 270.6 ms  persons 2  LOCKED id 5  1.69 m  steer +0.00 thr -0.22  L-103 R-103  
+ 3.7 fps  infer 265.0 ms  persons 3  LOCKED id 5  2.06 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.7 fps  infer 265.1 ms  persons 3  LOCKED id 5  2.15 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.7 fps  infer 274.3 ms  persons 3  LOCKED id 5  2.16 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.7 fps  infer 263.9 ms  persons 3  LOCKED id 5  2.20 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.8 fps  infer 253.4 ms  persons 3  LOCKED id 5  2.19 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 4.0 fps  infer 237.1 ms  persons 2  LOCKED id 5  1.99 m  steer +0.00 thr +0.00  L  +0 R  +0  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (2.0 s behind)
+WARNING no camera frame for 2.0 s - motors stopped
+WARNING no camera frame for 3.0 s - motors stopped
+stream: dropping late frames (2.6 s behind)
+WARNING no camera frame for 4.0 s - motors stopped
+stream: dropping late frames (4.0 s behind)
+WARNING no camera frame for 5.0 s - motors stopped
+WARNING no camera frame for 6.0 s - motors stopped
+stream: dropping late frames (3.9 s behind)
+WARNING no camera frame for 7.0 s - motors stopped
+stream: dropping late frames (2.4 s behind)
+WARNING no camera frame for 8.0 s - motors stopped
+ 3.9 fps  infer 259.3 ms  persons 2  LOCKED id 5  1.85 m  steer +0.00 thr +0.00  L  +0 R  +0  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.3 s behind)
+WARNING no camera frame for 2.0 s - motors stopped
+stream: dropping late frames (1.9 s behind)
+WARNING no camera frame for 3.0 s - motors stopped
+stream: dropping late frames (2.2 s behind)
+WARNING no camera frame for 4.0 s - motors stopped
+ 3.8 fps  infer 275.7 ms  persons 1  LOCKED id 5  1.50 m  steer +0.00 thr -0.35  L-111 R-111  
+ 4.0 fps  infer 241.1 ms  persons 3  LOCKED id 5  1.32 m (from width)  steer +0.00 thr -0.48  L-118 R-118  
+WARNING no camera frame for 1.0 s - motors stopped
+WARNING no camera frame for 2.0 s - motors stopped
+[ WARN:0@129.449] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2029.573905 ms
+stream: dropping late frames (2.5 s behind)
+WARNING no camera frame for 3.0 s - motors stopped
+WARNING no camera frame for 4.0 s - motors stopped
+[ WARN:0@131.461] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2000.000900 ms
+stream: lost, reconnecting
+WARNING no camera frame for 5.0 s - motors stopped
+WARNING no camera frame for 6.0 s - motors stopped
+WARNING no camera frame for 7.1 s - motors stopped
+WARNING no camera frame for 8.1 s - motors stopped
+WARNING no camera frame for 9.1 s - motors stopped
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+ 3.8 fps  infer 297.5 ms  persons 2  LOCKED id 5  1.29 m (from width)  steer +0.00 thr -0.49  L-119 R-119  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.5 s behind)
+WARNING no camera frame for 2.0 s - motors stopped
+stream: dropping late frames (1.0 s behind)
+ 3.5 fps  infer 319.2 ms  persons 2  LOCKED id 5  1.19 m (from width)  steer +0.00 thr -0.56  L-123 R-123  
+ 3.6 fps  infer 298.4 ms  persons 1  LOCKED id 5  1.20 m (from width)  steer +0.00 thr -0.55  L-122 R-122  
+stream: dropping late frames (0.6 s behind)
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.9 s behind)WARNING no camera frame for 2.0 s - motors stopped
+
+ 3.6 fps  infer 291.8 ms  persons 2  LOCKED id 5  1.37 m (from width)  steer +0.00 thr -0.44  L-116 R-116  
+stream: dropping late frames (1.0 s behind)
+WARNING no camera frame for 1.0 s - motors stopped
+WARNING no camera frame for 2.0 s - motors stopped
+[ WARN:0@149.392] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2003.471839 ms
+WARNING no camera frame for 3.0 s - motors stopped
+stream: dropping late frames (3.0 s behind)
+WARNING no camera frame for 4.0 s - motors stopped
+WARNING no camera frame for 5.0 s - motors stopped
+[ WARN:0@151.507] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2031.929580 ms
+stream: lost, reconnecting
+WARNING no camera frame for 6.0 s - motors stopped
+WARNING no camera frame for 7.1 s - motors stopped
+WARNING no camera frame for 8.1 s - motors stopped
+WARNING no camera frame for 9.1 s - motors stopped
+WARNING no camera frame for 10.1 s - motors stopped
+WARNING no camera frame for 11.1 s - motors stopped
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+ 3.6 fps  infer 318.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.7 fps  infer 288.6 ms  persons 1  LOCKED id 11  3.38 m  steer +0.00 thr +0.97  L+148 R+148  
+stream: dropping late frames (0.6 s behind)
+ 3.7 fps  infer 272.4 ms  persons 1  LOCKED id 11  3.05 m  steer +0.00 thr +0.67  L+130 R+130  
+ 3.9 fps  infer 253.9 ms  persons 1  LOCKED id 11  2.77 m  steer +0.00 thr +0.54  L+122 R+122  
+ 4.0 fps  infer 238.0 ms  persons 1  LOCKED id 11  2.76 m  steer +0.00 thr +0.53  L+121 R+121  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.3 s behind)
+WARNING no camera frame for 2.0 s - motors stopped
+WARNING no camera frame for 3.0 s - motors stopped
+[ WARN:0@166.395] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2002.672582 ms
+stream: dropping late frames (2.5 s behind)
+WARNING no camera frame for 4.0 s - motors stopped
+WARNING no camera frame for 5.0 s - motors stopped
+[ WARN:0@168.422] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2000.052598 ms
+stream: lost, reconnecting
+WARNING no camera frame for 6.0 s - motors stopped
+WARNING no camera frame for 7.0 s - motors stopped
+WARNING no camera frame for 8.0 s - motors stopped
+WARNING no camera frame for 9.0 s - motors stopped
+WARNING no camera frame for 10.0 s - motors stopped
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+ 3.9 fps  infer 278.5 ms  persons 1  LOCKED id 11  3.35 m  steer +0.00 thr +0.95  L+146 R+146  
+ 3.5 fps  infer 324.0 ms  persons 1  LOCKED id 11  3.54 m  steer +0.00 thr +1.00  L+150 R+150  
+ 3.6 fps  infer 293.2 ms  persons 1  LOCKED id 11  2.54 m  steer +0.00 thr +0.28  L+106 R+106  
+ 3.6 fps  infer 280.2 ms  persons 1  LOCKED id 11  1.75 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.8 fps  infer 250.0 ms  persons 1  LOCKED id 11  1.52 m (from width)  steer +0.00 thr -0.34  L-110 R-110  
+ 3.7 fps  infer 265.6 ms  persons 1  LOCKED id 11  1.75 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.7 fps  infer 262.9 ms  persons 2  LOCKED id 11  1.52 m (from width)  steer +0.00 thr -0.35  L-110 R-110  
+ 3.8 fps  infer 259.7 ms  persons 2  LOCKED id 11  1.89 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.8 fps  infer 257.3 ms  persons 2  LOCKED id 11  2.11 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.8 fps  infer 260.5 ms  persons 2  LOCKED id 11  1.63 m  steer +0.00 thr -0.26  L-105 R-105  
+ 4.0 fps  infer 236.5 ms  persons 3  LOCKED id 11  1.52 m (from width)  steer +0.00 thr -0.34  L-110 R-110  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.5 s behind)
+ 3.9 fps  infer 258.0 ms  persons 2  LOCKED id 11  1.70 m  steer +0.00 thr -0.20  L-102 R-102  
+ 3.8 fps  infer 262.1 ms  persons 3  LOCKED id 11  1.40 m (from width)  steer +0.00 thr -0.42  L-114 R-114  
+ 3.9 fps  infer 246.9 ms  persons 4  LOCKED id 11  1.63 m  steer +0.00 thr -0.25  L-104 R-104  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.8 s behind)
+WARNING no camera frame for 2.0 s - motors stopped
+ 3.9 fps  infer 252.4 ms  persons 3  LOCKED id 11  1.82 m  steer +0.00 thr +0.00  L  +0 R  +0  
+stream: dropping late frames (0.8 s behind)
+WARNING no camera frame for 1.0 s - motors stopped
+WARNING no camera frame for 2.0 s - motors stopped
+stream: dropping late frames (2.3 s behind)
+WARNING no camera frame for 3.0 s - motors stopped
+stream: dropping late frames (2.0 s behind)
+WARNING no camera frame for 4.0 s - motors stopped
+ 3.9 fps  infer 258.9 ms  persons 2  LOCKED id 11  2.04 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.9 fps  infer 260.7 ms  persons 2  SEARCHING id 11 1.2/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.9 fps  infer 263.6 ms  persons 2  SEARCHING id 11 2.4/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.9 fps  infer 265.2 ms  persons 3  SEARCHING id 11 3.4/10 s  reid best 0.48  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.9 fps  infer 260.2 ms  persons 2  SEARCHING id 11 4.6/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.9 fps  infer 260.6 ms  persons 2  SEARCHING id 11 5.7/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 4.0 fps  infer 255.6 ms  persons 2  SEARCHING id 11 7.0/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

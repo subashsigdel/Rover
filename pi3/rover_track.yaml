@@ -1,0 +1,10 @@
+# ByteTrack settings for the rover (ultralytics defaults in brackets).
+# Detections go in at conf 0.1: the low-score ones are what keep a partly
+# hidden person's track alive. New IDs need a confident detection.
+tracker_type: bytetrack
+track_high_thresh: 0.5  # [0.25] first-stage matching uses only solid detections
+track_low_thresh: 0.1   # [0.1]  second stage recovers weak ones, e.g. a half-hidden person
+new_track_thresh: 0.6   # [0.25] only a confident detection starts a new ID
+track_buffer: 60        # [30]   frames a lost track is kept alive (~20 s on a Pi 3, 4 s at 15 fps)
+match_thresh: 0.8       # [0.8]
+fuse_score: True        # [True]

@@ -1,0 +1,30 @@
+# follow  2026-09-11 15:56:48  rpi5  temp=46.7'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --source rtsp://192.168.1.11:554 --port auto --ref-dist 2 --ref-height 379
+follow_rover: model=auto imgsz=320 source=rtsp://192.168.1.11:554 transport=tcp cap=640x480 flip=False rotate=cw acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 target_dist=2.0 ref_dist=2.0 ref_height=379.0 vfov=50.0 port=auto max_pwm=150 min_pwm=90 steer=False band=0.3 hold=1.5 calibrate=False show=False view=8080
+[ WARN:0@23.569] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+stream: cannot open rtsp://192.168.1.11:554 (attempt 1), retrying
+[ WARN:0@27.633] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[ WARN:0@31.697] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[ WARN:0@35.761] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[ WARN:0@39.825] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[ WARN:0@43.893] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[ WARN:0@47.953] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[ WARN:0@52.017] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[ WARN:0@56.081] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[ WARN:0@60.145] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+stream: cannot open rtsp://192.168.1.11:554 (attempt 10), retrying
+Traceback (most recent call last):
+  File "/home/rasp/HumanFollowing/follow_rover.py", line 360, in <module>
+    main()
+  File "/home/rasp/HumanFollowing/follow_rover.py", line 184, in main
+    cam = open_camera(args.source, cap_w, cap_h, args.flip, args.transport, args.rotate)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rasp/HumanFollowing/camera.py", line 23, in open_camera
+    return StreamGrabber(source, transport, rotate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rasp/HumanFollowing/camera.py", line 97, in __init__
+    self._wait_first(
+  File "/home/rasp/HumanFollowing/camera.py", line 72, in _wait_first
+    raise RuntimeError(message)
+RuntimeError: no video from rtsp://192.168.1.11:554 after 40 s. Is the AMB82 powered and on the same network? Its Serial Monitor prints the stream URL.
+# exit 1  2026-09-11 15:57:55

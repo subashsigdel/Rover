@@ -1,0 +1,13 @@
+# follow-dryrun  2026-09-13 11:19:09  rpi5  temp=45.1'C
+# $ timeout -s INT 40 /home/rasp/rover-venv/bin/python -u follow_rover.py --ref-dist 2 --ref-height 379
+follow_rover: model=auto imgsz=320 source=usb transport=tcp cap=640x480 flip=False rotate=none acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 ref_dist=2.0 ref_height=379.0 vfov=50.0 port=None max_pwm=150 min_pwm=90 steer=False stop_dist=1.5 start_dist=2.0 hold=1.5 calibrate=False show=False view=8080
+webcam: /dev/video0 640x480 @ 25 fps
+camera started: usb
+model loaded yolo11n_192x320.onnx, input [192, 320]
+no rover link - dry run, motors not driven
+live view: http://<pi-address>:8080/
+Loading yolo11n_192x320.onnx for ONNX Runtime inference...
+Using ONNX Runtime 1.30.0 with CPUExecutionProvider
+ 0.0 fps  infer 3009.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  dry run
+ 0.4 fps  infer 2457.8 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  dry run
+# exit 124  2026-09-13 11:19:55

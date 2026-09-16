@@ -1,0 +1,4 @@
+# follow  2026-09-13 14:00:23  rpi5  temp=70.9'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --port auto
+follow_rover: model=auto imgsz=320 source=usb transport=tcp cap=640x480 flip=False acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 start_ratio=0.85 port=auto max_pwm=150 min_pwm=90 steer=False hold=1.5 calibrate=False show=False view=8080
+calibrated: stop when the box is 99% of the picture height or more, follow below 84%

@@ -1,0 +1,172 @@
+# setup  2026-09-11 12:37:37  rpi5  temp=48.3'C
+# $ bash pi.sh _setup
+--- rsync
+--- camera
+Available cameras
+-----------------
+0 : ov5647 [2592x1944 10-bit GBRG] (/base/soc/i2c0mux/i2c@1/ov5647@36)
+    Modes: 'SGBRG10_CSI2P' : 640x480 [58.92 fps - (16, 0)/2560x1920 crop]
+                             1296x972 [46.34 fps - (0, 0)/2592x1944 crop]
+                             1920x1080 [32.81 fps - (348, 434)/1928x1080 crop]
+                             2592x1944 [15.63 fps - (0, 0)/2592x1944 crop]
+
+--- venv
+(numpy pinned to the system's 1.24.2)
+--- torch, CPU build (the default aarch64 wheel pulls ~2 GB of NVIDIA CUDA)
+Looking in indexes: https://download.pytorch.org/whl/cpu, https://pypi.org/simple
+Collecting torch
+  Obtaining dependency information for torch from https://download-r2.pytorch.org/whl/cpu/torch-2.14.0%2Bcpu-cp311-cp311-manylinux_2_28_aarch64.whl.metadata
+  Using cached https://download-r2.pytorch.org/whl/cpu/torch-2.14.0%2Bcpu-cp311-cp311-manylinux_2_28_aarch64.whl.metadata (37 kB)
+Collecting torchvision
+  Obtaining dependency information for torchvision from https://download-r2.pytorch.org/whl/cpu/torchvision-0.29.0%2Bcpu-cp311-cp311-manylinux_2_28_aarch64.whl.metadata
+  Using cached https://download-r2.pytorch.org/whl/cpu/torchvision-0.29.0%2Bcpu-cp311-cp311-manylinux_2_28_aarch64.whl.metadata (5.7 kB)
+Collecting filelock
+  Downloading filelock-3.32.6-py3-none-any.whl (100 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.2/100.2 kB 645.6 kB/s eta 0:00:00
+Collecting typing-extensions>=4.10.0
+  Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 1.8 MB/s eta 0:00:00
+Collecting setuptools>=77.0.3
+  Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 4.5 MB/s eta 0:00:00
+Collecting sympy>=1.13.3
+  Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 6.3 MB/s eta 0:00:00
+Collecting networkx>=2.5.1
+  Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 5.9 MB/s eta 0:00:00
+Requirement already satisfied: jinja2 in /usr/lib/python3/dist-packages (from torch) (3.1.2)
+Collecting fsspec>=0.8.5
+  Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.6/206.6 kB 4.3 MB/s eta 0:00:00
+Requirement already satisfied: numpy in /usr/lib/python3/dist-packages (from torchvision) (1.24.2)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /usr/lib/python3/dist-packages (from torchvision) (9.4.0)
+Collecting mpmath<1.4,>=1.1.0
+  Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 5.7 MB/s eta 0:00:00
+Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.14.0%2Bcpu-cp311-cp311-manylinux_2_28_aarch64.whl (159.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.2/159.2 MB 521.8 kB/s eta 0:00:00
+Downloading https://download-r2.pytorch.org/whl/cpu/torchvision-0.29.0%2Bcpu-cp311-cp311-manylinux_2_28_aarch64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 6.0 MB/s eta 0:00:00
+Using cached https://download-r2.pytorch.org/whl/cpu/torch-2.14.0%2Bcpu-cp311-cp311-manylinux_2_28_aarch64.whl (159.2 MB)
+Using cached https://download-r2.pytorch.org/whl/cpu/torchvision-0.29.0%2Bcpu-cp311-cp311-manylinux_2_28_aarch64.whl (2.1 MB)
+Installing collected packages: mpmath, typing-extensions, sympy, setuptools, networkx, fsspec, filelock, torch, torchvision
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.4.0
+    Not uninstalling typing-extensions at /usr/lib/python3/dist-packages, outside environment /home/rasp/rover-venv
+    Can't uninstall 'typing_extensions'. No files were found to uninstall.
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 66.1.1
+    Uninstalling setuptools-66.1.1:
+      Successfully uninstalled setuptools-66.1.1
+Successfully installed filelock-3.32.6 fsspec-2026.7.0 mpmath-1.3.0 networkx-3.6.1 setuptools-84.0.0 sympy-1.14.0 torch-2.14.0+cpu torchvision-0.29.0+cpu typing-extensions-4.16.0
+--- ultralytics (keeps the CPU torch above)
+Collecting ultralytics
+  Downloading ultralytics-8.4.147-py3-none-any.whl (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 3.7 MB/s eta 0:00:00
+Collecting lap
+  Downloading lap-0.5.13-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 6.2 MB/s eta 0:00:00
+Requirement already satisfied: pyserial in /usr/lib/python3/dist-packages (3.5)
+Collecting cloudpickle>=3.1.1
+  Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Requirement already satisfied: filelock>=3.16.1 in /home/rasp/rover-venv/lib/python3.11/site-packages (from ultralytics) (3.32.6)
+Requirement already satisfied: numpy>=1.23.0 in /usr/lib/python3/dist-packages (from ultralytics) (1.24.2)
+Collecting matplotlib>=3.3.0
+  Downloading matplotlib-3.11.1-cp311-cp311-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl (10.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.8/10.8 MB 5.6 MB/s eta 0:00:00
+Collecting opencv-python!=4.13.0.90,>=4.7.0
+  Downloading opencv_python-5.0.0.93-cp37-abi3-manylinux_2_28_aarch64.whl (49.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.8/49.8 MB 2.2 MB/s eta 0:00:00
+Requirement already satisfied: pillow>=7.1.2 in /usr/lib/python3/dist-packages (from ultralytics) (9.4.0)
+Collecting pyyaml>=5.3.1
+  Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (775 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 775.6/775.6 kB 6.0 MB/s eta 0:00:00
+Requirement already satisfied: requests>=2.23.0 in /usr/lib/python3/dist-packages (from ultralytics) (2.28.1)
+Requirement already satisfied: torch>=1.8.0 in /home/rasp/rover-venv/lib/python3.11/site-packages (from ultralytics) (2.14.0+cpu)
+Requirement already satisfied: torchvision>=0.9.0 in /home/rasp/rover-venv/lib/python3.11/site-packages (from ultralytics) (0.29.0+cpu)
+Requirement already satisfied: psutil>=5.8.0 in /usr/lib/python3/dist-packages (from ultralytics) (5.9.4)
+Collecting polars>=0.20.0
+  Downloading polars-1.44.2-py3-none-any.whl (865 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 865.8/865.8 kB 6.1 MB/s eta 0:00:00
+Collecting nvidia-ml-py>=12.0.0
+  Downloading nvidia_ml_py-13.610.43-py3-none-any.whl (53 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.2/53.2 kB 2.3 MB/s eta 0:00:00
+Collecting ultralytics-thop>=2.1.6
+  Downloading ultralytics_thop-2.1.6-py3-none-any.whl (30 kB)
+Collecting ultralytics-platform>=0.1.32
+  Downloading ultralytics_platform-0.1.39-py3-none-any.whl (75 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.8/75.8 kB 2.3 MB/s eta 0:00:00
+Collecting contourpy>=1.0.1
+  Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl (329 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 329.2/329.2 kB 5.1 MB/s eta 0:00:00
+Collecting cycler>=0.10
+  Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Collecting fonttools>=4.28.2
+  Downloading fonttools-4.65.0-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (5.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 6.3 MB/s eta 0:00:00
+Collecting kiwisolver>=1.3.1
+  Downloading kiwisolver-1.5.1-cp311-cp311-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 6.3 MB/s eta 0:00:00
+Collecting matplotlib>=3.3.0
+  Downloading matplotlib-3.11.0-cp311-cp311-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl (10.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.8/10.8 MB 6.5 MB/s eta 0:00:00
+  Downloading matplotlib-3.10.9-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (9.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 6.7 MB/s eta 0:00:00
+Collecting packaging>=20.0
+  Downloading packaging-26.3-py3-none-any.whl (129 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.0/130.0 kB 3.5 MB/s eta 0:00:00
+Collecting pyparsing>=3
+  Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.8/122.8 kB 4.2 MB/s eta 0:00:00
+Collecting python-dateutil>=2.7
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 4.5 MB/s eta 0:00:00
+Collecting opencv-python!=4.13.0.90,>=4.7.0
+  Downloading opencv_python-4.14.0.94-cp37-abi3-manylinux_2_28_aarch64.whl (53.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.4/53.4 MB 2.2 MB/s eta 0:00:00
+  Downloading opencv_python-4.13.0.92-cp37-abi3-manylinux_2_28_aarch64.whl (46.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.7/46.7 MB 2.3 MB/s eta 0:00:00
+  Downloading opencv_python-4.12.0.88-cp37-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl (45.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.9/45.9 MB 2.2 MB/s eta 0:00:00
+  Using cached opencv_python-4.11.0.86-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (42.2 MB)
+Collecting polars-runtime-32==1.44.2
+  Downloading polars_runtime_32-1.44.2-cp310-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (46.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.6/46.6 MB 2.5 MB/s eta 0:00:00
+Requirement already satisfied: typing-extensions>=4.10.0 in /home/rasp/rover-venv/lib/python3.11/site-packages (from torch>=1.8.0->ultralytics) (4.16.0)
+Requirement already satisfied: setuptools>=77.0.3 in /home/rasp/rover-venv/lib/python3.11/site-packages (from torch>=1.8.0->ultralytics) (84.0.0)
+Requirement already satisfied: sympy>=1.13.3 in /home/rasp/rover-venv/lib/python3.11/site-packages (from torch>=1.8.0->ultralytics) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in /home/rasp/rover-venv/lib/python3.11/site-packages (from torch>=1.8.0->ultralytics) (3.6.1)
+Requirement already satisfied: jinja2 in /usr/lib/python3/dist-packages (from torch>=1.8.0->ultralytics) (3.1.2)
+Requirement already satisfied: fsspec>=0.8.5 in /home/rasp/rover-venv/lib/python3.11/site-packages (from torch>=1.8.0->ultralytics) (2026.7.0)
+Collecting httpx<1,>=0.28
+  Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 2.9 MB/s eta 0:00:00
+Collecting contourpy>=1.0.1
+  Downloading contourpy-1.3.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (313 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 313.1/313.1 kB 5.4 MB/s eta 0:00:00
+Collecting anyio
+  Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 132.1/132.1 kB 3.4 MB/s eta 0:00:00
+Requirement already satisfied: certifi in /usr/lib/python3/dist-packages (from httpx<1,>=0.28->ultralytics-platform>=0.1.32->ultralytics) (2022.9.24)
+Collecting httpcore==1.*
+  Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 3.1 MB/s eta 0:00:00
+Requirement already satisfied: idna in /usr/lib/python3/dist-packages (from httpx<1,>=0.28->ultralytics-platform>=0.1.32->ultralytics) (3.3)
+Collecting h11>=0.16
+  Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Requirement already satisfied: six>=1.5 in /usr/lib/python3/dist-packages (from python-dateutil>=2.7->matplotlib>=3.3.0->ultralytics) (1.16.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /home/rasp/rover-venv/lib/python3.11/site-packages (from sympy>=1.13.3->torch>=1.8.0->ultralytics) (1.3.0)
+Installing collected packages: nvidia-ml-py, pyyaml, python-dateutil, pyparsing, polars-runtime-32, packaging, opencv-python, lap, kiwisolver, h11, fonttools, cycler, contourpy, cloudpickle, anyio, polars, matplotlib, httpcore, ultralytics-thop, httpx, ultralytics-platform, ultralytics
+Successfully installed anyio-4.15.1 cloudpickle-3.1.2 contourpy-1.3.2 cycler-0.12.1 fonttools-4.65.0 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 kiwisolver-1.5.1 lap-0.5.13 matplotlib-3.10.9 nvidia-ml-py-13.610.43 opencv-python-4.11.0.86 packaging-26.3 polars-1.44.2 polars-runtime-32-1.44.2 pyparsing-3.3.2 python-dateutil-2.9.0.post0 pyyaml-6.0.3 ultralytics-8.4.147 ultralytics-platform-0.1.39 ultralytics-thop-2.1.6
+--- remove CUDA leftovers
+none installed
+Files removed: 162
+--- import check
+Creating new Ultralytics Settings v0.0.8 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/home/rasp/.config/Ultralytics/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/usage/settings.
+picamera2 ok | ultralytics 8.4.147 | torch 2.14.0+cpu | cv2 4.11.0
+--- serial access
+rasp is in dialout
+# exit 0  2026-09-11 12:45:01

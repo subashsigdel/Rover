@@ -1,0 +1,21 @@
+# follow  2026-09-13 12:09:21  rpi5  temp=54.8'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --port auto
+calibration: 473 px at 2.0 m, saved 2026-09-13 11:58
+follow_rover: model=auto imgsz=320 source=usb transport=tcp cap=640x480 flip=False rotate=none acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 ref_dist=2.0 ref_height=472.9 vfov=50.0 port=auto max_pwm=150 min_pwm=90 steer=False stop_dist=1.5 start_dist=2.0 hold=1.5 calibrate=False show=False view=8080
+webcam: /dev/video0 640x480 @ 25 fps
+camera started: usb
+model loaded yolo11n_192x320.onnx, input [192, 320]
+Traceback (most recent call last):
+  File "/home/rasp/HumanFollowing/follow_rover.py", line 385, in <module>
+    main()
+  File "/home/rasp/HumanFollowing/follow_rover.py", line 200, in main
+    link = RoverLink(args.port, args.hold) if args.port and not args.calibrate else None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rasp/HumanFollowing/follow_rover.py", line 49, in __init__
+    self.ser, self.port = self._find(port)
+                          ^^^^^^^^^^^^^^^^
+  File "/home/rasp/HumanFollowing/follow_rover.py", line 70, in _find
+    raise RuntimeError(f"no rover ESP32 found; answers to M0,0: {replies or 'no serial ports'}")
+RuntimeError: no rover ESP32 found; answers to M0,0: {'/dev/ttyUSB0': 'oad:0x40080400,len:3500\r\ncsum err:0xc3!=0x83\r\nets_main.c 384'}
+FATAL: exception not rethrown
+# exit 134  2026-09-13 12:15:51

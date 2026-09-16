@@ -1,0 +1,43 @@
+# follow  2026-09-11 15:32:42  rpi5  temp=75.2'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --source rtsp://192.168.1.11:554 --port auto --ref-dist 2 --ref-height 379
+follow_rover: model=auto imgsz=320 source=rtsp://192.168.1.11:554 transport=tcp cap=640x480 flip=False rotate=cw acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 target_dist=2.0 ref_dist=2.0 ref_height=379.0 vfov=50.0 port=auto max_pwm=150 min_pwm=90 steer=False band=0.3 hold=1.5 calibrate=False show=False view=8080
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+camera started: rtsp://192.168.1.11:554
+model loaded yolo11n_320x192.onnx, input [320, 192]
+rover link /dev/ttyUSB1 (ESP32 firmware answered)
+live view: http://<pi-address>:8080/
+Loading yolo11n_320x192.onnx for ONNX Runtime inference...
+Using ONNX Runtime 1.30.0 with CPUExecutionProvider
+ 0.0 fps  infer 4226.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 0.2 fps  infer 3468.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.0 s behind)
+ 1.2 fps  infer 1915.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.1 fps  infer 932.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 463.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 328.6 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 298.0 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 292.5 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 297.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.5 fps  infer 289.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 297.1 ms  persons 1  LOCKED id 1  1.71 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 331.5 ms  persons 1  LOCKED id 1  2.30 m  steer +0.00 thr +0.21  L+102 R+102  
+ 3.1 fps  infer 342.1 ms  persons 1  LOCKED id 1  2.19 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.1 fps  infer 342.6 ms  persons 1  LOCKED id 1  1.89 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.0 fps  infer 341.5 ms  persons 1  LOCKED id 1  1.86 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 358.1 ms  persons 1  LOCKED id 1  1.86 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 364.9 ms  persons 1  LOCKED id 1  1.61 m  steer +0.00 thr -0.27  L-106 R-106  
+ 2.8 fps  infer 367.3 ms  persons 1  LOCKED id 1  1.18 m (from width)  steer +0.00 thr -0.59  L-125 R-125  
+ 2.8 fps  infer 371.2 ms  persons 1  LOCKED id 1  1.27 m (from width)  steer +0.00 thr -0.51  L-120 R-120  
+ 2.7 fps  infer 366.7 ms  persons 1  LOCKED id 1  2.22 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.7 fps  infer 367.6 ms  persons 1  LOCKED id 1  2.39 m  steer +0.00 thr +0.27  L+106 R+106  
+ 2.7 fps  infer 365.6 ms  persons 1  LOCKED id 1  1.94 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 354.4 ms  persons 1  LOCKED id 1  1.76 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.8 fps  infer 338.8 ms  persons 1  LOCKED id 1  1.76 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 328.1 ms  persons 1  LOCKED id 1  1.77 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.9 fps  infer 348.9 ms  persons 1  LOCKED id 1  1.77 m  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.7 fps  infer 432.9 ms  persons 1  LOCKED id 1  1.47 m  steer +0.00 thr -0.39  L-113 R-113  
+ 2.7 fps  infer 413.4 ms  persons 1  LOCKED id 1  1.46 m (from width)  steer +0.00 thr -0.37  L-112 R-112  
+ 2.6 fps  infer 395.5 ms  persons 0  SEARCHING id 1 0.8/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+stream: dropping late frames (0.7 s behind)
+# exit 0  2026-09-11 15:34:03

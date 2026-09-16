@@ -1,0 +1,2 @@
+# bench  2026-09-11 12:46:15  rpi5  temp=58.5'C
+# $ /home/rasp/rover-venv/bin/python -u bench_yolo.py

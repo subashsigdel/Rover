@@ -1,0 +1,25 @@
+# follow-dryrun  2026-09-11 14:32:02  rpi5  temp=49.4'C
+# $ timeout -s INT 50 /home/rasp/rover-venv/bin/python -u follow_rover.py --source rtsp://192.168.1.11:554
+follow_rover: model=yolo11n.pt imgsz=320 source=rtsp://192.168.1.11:554 transport=tcp cap=640x480 flip=False acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 target_dist=2.0 ref_dist=2.0 ref_height=0.0 vfov=50.0 port=None max_pwm=120 min_pwm=50 hold=1.5 calibrate=False show=False
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+camera started: rtsp://192.168.1.11:554
+model loaded yolo11n.pt
+no rover link - dry run, motors not driven
+ 0.0 fps  infer 3228.8 ms  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  dry run
+ 0.2 fps  infer 2714.1 ms  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  dry run
+ 0.4 fps  infer 1956.8 ms  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  dry run
+ 0.7 fps  infer 1461.8 ms  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  dry run
+ 0.8 fps  infer 1160.5 ms  LOCKED id 1  clipped  steer -0.11 thr -0.25  L -75 R -59  dry run
+ 1.0 fps  infer 964.3 ms  LOCKED id 1  clipped  steer -0.13 thr -0.25  L -76 R -58  dry run
+ 1.1 fps  infer 828.3 ms  LOCKED id 1  clipped  steer -0.12 thr -0.25  L -75 R -59  dry run
+ 1.2 fps  infer 741.3 ms  LOCKED id 1  clipped  steer -0.12 thr -0.25  L -75 R -59  dry run
+ 1.3 fps  infer 685.9 ms  LOCKED id 1  clipped  steer -0.12 thr -0.25  L -75 R -59  dry run
+ 1.4 fps  infer 650.0 ms  LOCKED id 1  clipped  steer -0.13 thr -0.25  L -76 R -58  dry run
+ 1.4 fps  infer 638.8 ms  LOCKED id 1  clipped  steer -0.13 thr -0.25  L -76 R -58  dry run
+ 1.5 fps  infer 618.4 ms  LOCKED id 1  clipped  steer -0.13 thr -0.25  L -76 R -58  dry run
+ 1.5 fps  infer 604.7 ms  LOCKED id 1  clipped  steer -0.13 thr -0.25  L -76 R -58  dry run
+ 1.5 fps  infer 603.2 ms  LOCKED id 1  clipped  steer -0.13 thr -0.25  L -76 R -58  dry run
+ 1.6 fps  infer 594.6 ms  LOCKED id 1  clipped  steer -0.13 thr -0.25  L -76 R -58  dry run
+ 1.6 fps  infer 605.3 ms  LOCKED id 1  clipped  steer -0.12 thr -0.25  L -76 R -58  dry run
+ 1.5 fps  infer 633.4 ms  LOCKED id 1  clipped  steer -0.12 thr -0.25  L -76 R -58  dry run
+# exit 124  2026-09-11 14:32:56

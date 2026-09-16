@@ -1,0 +1,27 @@
+# follow  2026-09-11 14:36:28  rpi5  temp=49.4'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --source rtsp://192.168.1.11:554 --port /dev/ttyUSB0
+follow_rover: model=yolo11n.pt imgsz=320 source=rtsp://192.168.1.11:554 transport=tcp cap=640x480 flip=False acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 target_dist=2.0 ref_dist=2.0 ref_height=0.0 vfov=50.0 port=/dev/ttyUSB0 max_pwm=120 min_pwm=50 hold=1.5 calibrate=False show=False
+[ WARN:0@18.824] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 10021.736360 ms
+[ WARN:0@18.825] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+stream: cannot open rtsp://192.168.1.11:554 (attempt 1), retrying
+[ WARN:0@29.846] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 10020.337047 ms
+[ WARN:0@29.846] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+[ WARN:0@40.870] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 10022.647640 ms
+[ WARN:0@40.870] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+Traceback (most recent call last):
+  File "/home/rasp/HumanFollowing/follow_rover.py", line 273, in <module>
+    main()
+  File "/home/rasp/HumanFollowing/follow_rover.py", line 137, in main
+    cam = open_camera(args.source, cap_w, cap_h, args.flip, args.transport)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rasp/HumanFollowing/camera.py", line 20, in open_camera
+    return StreamGrabber(source, transport)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rasp/HumanFollowing/camera.py", line 86, in __init__
+    self._wait_first(
+  File "/home/rasp/HumanFollowing/camera.py", line 61, in _wait_first
+    raise RuntimeError(message)
+RuntimeError: no video from rtsp://192.168.1.11:554 after 40 s. Is the AMB82 powered and on the same network? Its Serial Monitor prints the stream URL.
+[ WARN:0@51.894] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 10023.593737 ms
+[ WARN:0@51.895] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+# exit 1  2026-09-11 14:37:22

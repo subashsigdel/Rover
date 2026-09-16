@@ -1,0 +1,71 @@
+# follow  2026-09-11 15:01:41  rpi5  temp=53.7'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --source rtsp://192.168.1.11:554 --port auto --ref-dist 2 --ref-height 379
+follow_rover: model=yolo11n.pt imgsz=320 source=rtsp://192.168.1.11:554 transport=tcp cap=640x480 flip=False rotate=cw acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 target_dist=2.0 ref_dist=2.0 ref_height=379.0 vfov=50.0 port=auto max_pwm=150 min_pwm=90 hold=1.5 calibrate=False show=False view=8080
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+camera started: rtsp://192.168.1.11:554
+model loaded yolo11n.pt
+rover link /dev/ttyUSB1 (ESP32 firmware answered)
+live view: http://<pi-address>:8080/
+stream: dropping late frames (0.5 s behind)
+ 0.0 fps  infer 4383.2 ms  persons 1  LOCKED id 1  clipped  steer -0.12 thr -0.25  L-112 R -97  
+ 0.1 fps  infer 3655.2 ms  persons 1  LOCKED id 1  clipped  steer -0.11 thr -0.25  L-111 R -98  
+ 0.4 fps  infer 2568.9 ms  persons 1  LOCKED id 1  1.67 m  steer -0.66 thr -0.22  L-142 R+116  
+ 0.6 fps  infer 1871.1 ms  persons 1  LOCKED id 1  1.58 m  steer -0.60 thr -0.30  L-143 R+108  
+ 0.8 fps  infer 1421.3 ms  persons 1  LOCKED id 1  1.65 m  steer -0.58 thr -0.24  L-139 R+110  
+ 1.0 fps  infer 1134.3 ms  persons 1  LOCKED id 1  1.70 m  steer -0.91 thr -0.21  L-150 R+127  
+ 1.1 fps  infer 952.6 ms  persons 1  LOCKED id 1  1.69 m  steer -0.96 thr -0.22  L-150 R+127  
+ 1.2 fps  infer 836.3 ms  persons 1  LOCKED id 1  1.63 m  steer -0.88 thr -0.27  L-150 R+122  
+ 1.2 fps  infer 769.2 ms  persons 1  LOCKED id 1  clipped  steer -0.54 thr -0.25  L-137 R+107  
+ 1.3 fps  infer 717.9 ms  persons 1  LOCKED id 1  clipped  steer -0.20 thr -0.25  L-117 R -92  
+ 1.4 fps  infer 682.6 ms  persons 1  LOCKED id 1  clipped  steer -0.56 thr -0.25  L-138 R+108  
+ 1.4 fps  infer 659.1 ms  persons 1  LOCKED id 1  2.03 m  steer -0.71 thr +0.03  L-130 R+134  
+ 1.4 fps  infer 644.4 ms  persons 1  LOCKED id 1  2.34 m  steer -0.59 thr +0.25  L-110 R+140  
+ 1.5 fps  infer 634.7 ms  persons 1  LOCKED id 1  2.47 m  steer -0.48 thr +0.33  L -99 R+138  
+ 1.5 fps  infer 627.7 ms  persons 1  SEARCHING id 1 0.6/10 s  reid best 0.57  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.5 fps  infer 624.4 ms  persons 1  SEARCHING id 1 1.9/10 s  reid best 0.64  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.5 fps  infer 626.4 ms  persons 1  SEARCHING id 1 3.2/10 s  reid best 0.83  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.5 fps  infer 626.0 ms  persons 1  SEARCHING id 1 4.5/10 s  reid best 0.84  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.5 fps  infer 624.4 ms  persons 1  SEARCHING id 1 5.8/10 s  reid best 0.70  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.5 fps  infer 626.2 ms  persons 1  SEARCHING id 1 7.0/10 s  reid best 0.61  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.6 fps  infer 622.7 ms  persons 1  SEARCHING id 1 8.3/10 s  reid best 0.71  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.6 fps  infer 621.7 ms  persons 1  SEARCHING id 1 9.6/10 s  reid best 0.79  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.6 fps  infer 622.4 ms  persons 1  LOCKED id 2  clipped  steer +0.09 thr -0.25  L -99 R-110  
+ 1.6 fps  infer 623.0 ms  persons 1  LOCKED id 2  1.61 m  steer -0.32 thr -0.27  L-125 R +92  
+ 1.6 fps  infer 624.0 ms  persons 2  LOCKED id 2  2.11 m  steer -0.32 thr +0.10  L-102 R+114  
+ 1.5 fps  infer 645.4 ms  persons 1  SEARCHING id 2 0.8/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.6 fps  infer 638.2 ms  persons 1  SEARCHING id 2 2.0/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.6 fps  infer 638.1 ms  persons 1  LOCKED id 2  2.15 m  steer -0.40 thr +0.11  L-107 R+120  
+ 1.6 fps  infer 632.4 ms  persons 1  LOCKED id 2  2.02 m  steer -0.10 thr -0.01  L -96 R +95  
+ 1.6 fps  infer 628.5 ms  persons 1  LOCKED id 2  1.38 m  steer -0.16 thr -0.51  L-130 R-110  
+ 1.6 fps  infer 626.9 ms  persons 1  LOCKED id 2  clipped  steer -0.15 thr -0.25  L-114 R -95  
+ 1.6 fps  infer 625.3 ms  persons 1  LOCKED id 2  clipped  steer -0.06 thr -0.25  L-108 R-101  
+ 1.6 fps  infer 623.8 ms  persons 1  LOCKED id 2  clipped  steer +0.00 thr -0.25  L-105 R-105  
+ 1.6 fps  infer 620.3 ms  persons 1  LOCKED id 2  clipped  steer +0.00 thr -0.25  L-105 R-105  
+ 1.6 fps  infer 620.8 ms  persons 1  LOCKED id 2  clipped  steer +0.00 thr -0.25  L-105 R-105  
+ 1.6 fps  infer 622.9 ms  persons 1  LOCKED id 2  clipped  steer +0.00 thr -0.25  L-105 R-105  
+ 1.6 fps  infer 622.0 ms  persons 1  LOCKED id 2  clipped  steer +0.00 thr -0.25  L-105 R-105  
+ 1.6 fps  infer 625.2 ms  persons 1  LOCKED id 2  clipped  steer +0.00 thr -0.25  L-105 R-105  
+ 1.6 fps  infer 628.6 ms  persons 2  LOCKED id 2  clipped  steer -0.25 thr -0.25  L-119 R  +0  
+ 1.6 fps  infer 626.2 ms  persons 2  LOCKED id 2  clipped  steer -0.36 thr -0.25  L-126 R +96  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.5 s behind)
+WARNING no camera frame for 2.0 s - motors stopped
+WARNING no camera frame for 3.0 s - motors stopped
+stream: dropping late frames (2.3 s behind)
+ 1.6 fps  infer 624.6 ms  persons 1  SEARCHING id 2 3.0/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.6 fps  infer 629.1 ms  persons 2  SEARCHING id 2 4.3/10 s  reid best 0.64  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.6 fps  infer 633.1 ms  persons 2  SEARCHING id 2 5.6/10 s  reid best 0.82  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.6 fps  infer 630.3 ms  persons 1  SEARCHING id 2 6.9/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.6 fps  infer 625.2 ms  persons 1  SEARCHING id 2 8.2/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.6 fps  infer 623.7 ms  persons 1  SEARCHING id 2 9.4/10 s  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 1.6 fps  infer 641.5 ms  persons 1  LOCKED id 1  clipped  steer +0.70 thr -0.25  L+116 R-146  
+ 1.6 fps  infer 633.8 ms  persons 1  LOCKED id 1  clipped  steer +0.62 thr -0.25  L+112 R-142  
+ 1.6 fps  infer 630.5 ms  persons 1  LOCKED id 1  clipped  steer +0.61 thr -0.25  L+111 R-141  
+ 1.6 fps  infer 628.2 ms  persons 1  LOCKED id 1  clipped  steer +0.61 thr -0.25  L+111 R-141  
+ 1.6 fps  infer 627.6 ms  persons 1  LOCKED id 1  clipped  steer +0.35 thr -0.25  L +95 R-125  
+ 1.6 fps  infer 625.4 ms  persons 1  LOCKED id 1  clipped  steer -0.16 thr -0.25  L-114 R -95  
+ 1.6 fps  infer 630.3 ms  persons 1  LOCKED id 1  clipped  steer -0.43 thr -0.25  L-130 R+100  
+ 1.6 fps  infer 626.3 ms  persons 1  LOCKED id 1  clipped  steer -0.48 thr -0.25  L-133 R+103  
+ 1.6 fps  infer 623.2 ms  persons 1  LOCKED id 1  1.63 m  steer -0.48 thr -0.26  L-134 R+103  
+ 1.6 fps  infer 622.2 ms  persons 1  LOCKED id 1  2.11 m  steer -0.21 thr +0.10  L -96 R+108  
+# exit 0  2026-09-11 15:03:40

@@ -1,0 +1,109 @@
+# follow  2026-09-11 14:29:36  rpi5  temp=47.2'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --source rtsp://192.168.1.11:554 --port /dev/ttyUSB0
+follow_rover: model=yolo11n_ncnn_model imgsz=320 source=rtsp://192.168.1.11:554 transport=tcp cap=640x480 flip=False acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 target_dist=2.0 ref_dist=2.0 ref_height=0.0 vfov=50.0 port=/dev/ttyUSB0 max_pwm=120 min_pwm=50 hold=1.5 calibrate=False show=False
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] non-existing PPS 0 referenced
+[h264 @ 0x7f980056f0] decode_slice_header error
+[h264 @ 0x7f980056f0] no frame!
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+camera started: rtsp://192.168.1.11:554
+model loaded yolo11n_ncnn_model
+rover link /dev/ttyUSB0
+Loading yolo11n_ncnn_model for NCNN inference...
+# exit 135  2026-09-11 14:30:04

@@ -1,0 +1,18 @@
+# follow  2026-09-11 09:18:40  subash  temp=49.4'C
+# $ /home/subash/rover-venv/bin/python -u follow_rover.py
+follow_rover: model=yolo11n.pt imgsz=320 cap=640x480 flip=False conf=0.4 target_dist=2.0 ref_dist=2.0 ref_height=0.0 vfov=41.4 port=None max_pwm=120 min_pwm=50 calibrate=False show=False
+[0:58:38.990288666] [75489] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:340 [0mlibcamera v0.6.0+rpt20251202
+Traceback (most recent call last):
+  File "/home/subash/HumanFollowing/follow_rover.py", line 259, in <module>
+    main()
+    ~~~~^^
+  File "/home/subash/HumanFollowing/follow_rover.py", line 142, in main
+    cam = PiCamGrabber(cap_w, cap_h, args.flip)
+  File "/home/subash/HumanFollowing/follow_rover.py", line 40, in __init__
+    self.cam = Picamera2()
+               ~~~~~~~~~^^
+  File "/usr/lib/python3/dist-packages/picamera2/picamera2.py", line 341, in __init__
+    camera_num = self.global_camera_info()[camera_num]['Num']
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+IndexError: list index out of range
+# exit 1  2026-09-11 09:18:42

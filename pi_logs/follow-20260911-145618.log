@@ -1,0 +1,13 @@
+# follow  2026-09-11 14:56:18  rpi5  temp=63.4'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --source rtsp://192.168.1.11:554 --port /dev/ttyUSB0 --ref-dist 2 --ref-height NNN
+usage: follow_rover.py [-h] [--model MODEL] [--imgsz IMGSZ] [--source SOURCE]
+                       [--transport {tcp,udp}] [--cap CAP] [--flip]
+                       [--rotate {none,cw,ccw,180}]
+                       [--acquire-conf ACQUIRE_CONF]
+                       [--lost-timeout LOST_TIMEOUT] [--reid-dist REID_DIST]
+                       [--target-dist TARGET_DIST] [--ref-dist REF_DIST]
+                       [--ref-height REF_HEIGHT] [--vfov VFOV] [--port PORT]
+                       [--max-pwm MAX_PWM] [--min-pwm MIN_PWM] [--hold HOLD]
+                       [--calibrate] [--show] [--view VIEW]
+follow_rover.py: error: argument --ref-height: invalid float value: 'NNN'
+# exit 2  2026-09-11 14:56:30

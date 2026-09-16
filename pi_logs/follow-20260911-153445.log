@@ -1,0 +1,255 @@
+# follow  2026-09-11 15:34:45  rpi5  temp=56.4'C
+# $ /home/rasp/rover-venv/bin/python -u follow_rover.py --source rtsp://192.168.1.11:554 --port auto --ref-dist 2 --ref-height 379
+follow_rover: model=auto imgsz=320 source=rtsp://192.168.1.11:554 transport=tcp cap=640x480 flip=False rotate=cw acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 target_dist=2.0 ref_dist=2.0 ref_height=379.0 vfov=50.0 port=auto max_pwm=150 min_pwm=90 steer=False band=0.3 hold=1.5 calibrate=False show=False view=8080
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+camera started: rtsp://192.168.1.11:554
+model loaded yolo11n_320x192.onnx, input [320, 192]
+stream: dropping late frames (0.5 s behind)
+stream: dropping late frames (0.6 s behind)
+[ WARN:0@37.265] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2004.790785 ms
+stream: dropping late frames (2.3 s behind)
+rover link /dev/ttyUSB1 (ESP32 firmware answered)
+live view: http://<pi-address>:8080/
+WARNING no camera frame for 1.1 s - motors stopped
+stream: dropping late frames (2.2 s behind)
+stream: dropping late frames (0.9 s behind)
+Loading yolo11n_320x192.onnx for ONNX Runtime inference...
+stream: dropping late frames (0.8 s behind)
+stream: dropping late frames (1.4 s behind)
+Using ONNX Runtime 1.30.0 with CPUExecutionProvider
+stream: dropping late frames (2.4 s behind)
+stream: dropping late frames (1.1 s behind)
+stream: dropping late frames (1.8 s behind)
+[ WARN:0@60.858] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2002.871132 ms
+stream: dropping late frames (3.8 s behind)
+[ WARN:0@62.998] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2055.722016 ms
+stream: lost, reconnecting
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+stream: dropping late frames (0.6 s behind)
+stream: dropping late frames (0.9 s behind)
+stream: dropping late frames (2.1 s behind)
+stream: dropping late frames (2.9 s behind)
+stream: dropping late frames (1.1 s behind)
+ 0.0 fps  infer 9341.4 ms  persons 1  LOCKED id 1  3.62 m  steer +0.00 thr +1.00  L+150 R+150  
+stream: dropping late frames (0.6 s behind)
+ 0.2 fps  infer 7561.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 0.9 fps  infer 4050.1 ms  persons 1  LOCKED id 2  0.76 m (from width)  steer +0.00 thr -0.87  L-142 R-142  
+ 1.7 fps  infer 2196.6 ms  persons 1  LOCKED id 2  0.89 m (from width)  steer +0.00 thr -0.77  L-135 R-135  
+WARNING no camera frame for 1.0 s - motors stopped
+WARNING no camera frame for 2.0 s - motors stopped
+[ WARN:0@90.791] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2060.784081 ms
+stream: dropping late frames (2.1 s behind)
+stream: dropping late frames (1.0 s behind)
+ 1.7 fps  infer 1845.4 ms  persons 1  LOCKED id 2  0.91 m (from width)  steer +0.00 thr -0.76  L-135 R-135  
+ 2.2 fps  infer 1083.9 ms  persons 1  SEARCHING id 2 1.2/10 s  reid best 0.61  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 2.7 fps  infer 599.9 ms  persons 1  SEARCHING id 2 2.3/10 s  reid best 0.58  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.2 fps  infer 388.2 ms  persons 1  SEARCHING id 2 3.4/10 s  reid best 0.56  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.4 fps  infer 313.7 ms  persons 1  SEARCHING id 2 4.5/10 s  reid best 0.56  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.7 fps  infer 263.0 ms  persons 1  SEARCHING id 2 5.5/10 s  reid best 0.62  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.7 fps  infer 272.3 ms  persons 1  SEARCHING id 2 6.6/10 s  reid best 0.61  -  steer +0.00 thr +0.00  L  +0 R  +0  
+WARNING no camera frame for 1.0 s - motors stopped
+WARNING no camera frame for 2.0 s - motors stopped
+[ WARN:0@100.986] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2048.525252 ms
+stream: dropping late frames (2.1 s behind)
+WARNING no camera frame for 3.0 s - motors stopped
+stream: dropping late frames (0.7 s behind)
+ 3.8 fps  infer 267.5 ms  persons 1  LOCKED id 1  5.08 m  steer +0.00 thr +1.00  L+150 R+150  
+ 3.8 fps  infer 265.7 ms  persons 1  LOCKED id 1  5.03 m  steer +0.00 thr +1.00  L+150 R+150  
+stream: dropping late frames (0.7 s behind)
+ 3.8 fps  infer 261.6 ms  persons 1  LOCKED id 1  4.83 m  steer +0.00 thr +1.00  L+150 R+150  
+ 3.8 fps  infer 257.3 ms  persons 2  LOCKED id 1  4.66 m  steer +0.00 thr +1.00  L+150 R+150  
+ 3.7 fps  infer 267.2 ms  persons 2  LOCKED id 1  4.60 m  steer +0.00 thr +1.00  L+150 R+150  
+ 3.8 fps  infer 260.0 ms  persons 2  LOCKED id 1  3.98 m  steer +0.00 thr +1.00  L+150 R+150  
+stream: dropping late frames (0.7 s behind)
+ 3.9 fps  infer 254.6 ms  persons 2  LOCKED id 1  3.72 m  steer +0.00 thr +1.00  L+150 R+150  
+WARNING no camera frame for 1.0 s - motors stopped
+WARNING no camera frame for 2.0 s - motors stopped
+[ WARN:0@111.140] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2069.858313 ms
+stream: dropping late frames (2.2 s behind)
+WARNING no camera frame for 3.0 s - motors stopped
+WARNING no camera frame for 4.0 s - motors stopped
+[ WARN:0@113.266] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2093.617462 ms
+stream: lost, reconnecting
+WARNING no camera frame for 5.0 s - motors stopped
+WARNING no camera frame for 6.0 s - motors stopped
+WARNING no camera frame for 7.0 s - motors stopped
+WARNING no camera frame for 8.0 s - motors stopped
+WARNING no camera frame for 9.0 s - motors stopped
+WARNING no camera frame for 10.0 s - motors stopped
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+ 3.7 fps  infer 287.3 ms  persons 1  LOCKED id 1  3.97 m  steer +0.00 thr +1.00  L+150 R+150  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.4 s behind)
+ 3.7 fps  infer 294.6 ms  persons 1  LOCKED id 1  4.16 m  steer +0.00 thr +1.00  L+150 R+150  
+ 3.6 fps  infer 292.8 ms  persons 1  LOCKED id 1  3.83 m  steer +0.00 thr +1.00  L+150 R+150  
+WARNING no camera frame for 1.0 s - motors stopped
+WARNING no camera frame for 2.0 s - motors stopped
+[ WARN:0@125.552] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2022.829109 ms
+stream: dropping late frames (2.1 s behind)
+WARNING no camera frame for 3.0 s - motors stopped
+WARNING no camera frame for 4.0 s - motors stopped
+[ WARN:0@127.573] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2008.317122 ms
+stream: lost, reconnecting
+WARNING no camera frame for 5.0 s - motors stopped
+WARNING no camera frame for 6.0 s - motors stopped
+WARNING no camera frame for 7.1 s - motors stopped
+WARNING no camera frame for 8.1 s - motors stopped
+WARNING no camera frame for 9.1 s - motors stopped
+WARNING no camera frame for 10.1 s - motors stopped
+WARNING no camera frame for 11.1 s - motors stopped
+WARNING no camera frame for 12.1 s - motors stopped
+WARNING no camera frame for 13.1 s - motors stopped
+WARNING no camera frame for 14.1 s - motors stopped
+[ WARN:0@137.617] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 10041.410651 ms
+[ WARN:0@137.617] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 10041.761024 ms
+stream: connected to rtsp://192.168.1.11:554 (0x0)
+stream: lost, reconnecting
+WARNING no camera frame for 15.1 s - motors stopped
+WARNING no camera frame for 16.1 s - motors stopped
+WARNING no camera frame for 17.1 s - motors stopped
+WARNING no camera frame for 18.1 s - motors stopped
+WARNING no camera frame for 19.1 s - motors stopped
+WARNING no camera frame for 20.1 s - motors stopped
+WARNING no camera frame for 21.1 s - motors stopped
+WARNING no camera frame for 22.1 s - motors stopped
+WARNING no camera frame for 23.1 s - motors stopped
+[ WARN:0@147.623] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 10001.109377 ms
+[ WARN:0@147.624] global cap.cpp:215 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+stream: cannot open rtsp://192.168.1.11:554 (attempt 1), retrying
+WARNING no camera frame for 24.1 s - motors stopped
+WARNING no camera frame for 25.1 s - motors stopped
+WARNING no camera frame for 26.1 s - motors stopped
+WARNING no camera frame for 27.1 s - motors stopped
+WARNING no camera frame for 28.1 s - motors stopped
+WARNING no camera frame for 29.2 s - motors stopped
+WARNING no camera frame for 30.2 s - motors stopped
+WARNING no camera frame for 31.2 s - motors stopped
+WARNING no camera frame for 32.2 s - motors stopped
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+ 3.6 fps  infer 308.5 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+stream: dropping late frames (0.9 s behind)
+WARNING no camera frame for 1.0 s - motors stopped
+ 3.7 fps  infer 295.5 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (2.0 s behind)
+WARNING no camera frame for 2.0 s - motors stopped
+stream: dropping late frames (2.5 s behind)
+WARNING no camera frame for 3.0 s - motors stopped
+WARNING no camera frame for 4.0 s - motors stopped
+stream: dropping late frames (4.3 s behind)
+WARNING no camera frame for 5.0 s - motors stopped
+stream: dropping late frames (4.2 s behind)
+WARNING no camera frame for 6.0 s - motors stopped
+WARNING no camera frame for 7.0 s - motors stopped
+WARNING no camera frame for 8.1 s - motors stopped
+[ WARN:0@165.927] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2059.027633 ms
+stream: dropping late frames (5.4 s behind)
+WARNING no camera frame for 9.1 s - motors stopped
+WARNING no camera frame for 10.1 s - motors stopped
+[ WARN:0@167.961] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2013.040940 ms
+stream: lost, reconnecting
+WARNING no camera frame for 11.1 s - motors stopped
+WARNING no camera frame for 12.1 s - motors stopped
+WARNING no camera frame for 13.1 s - motors stopped
+WARNING no camera frame for 14.1 s - motors stopped
+WARNING no camera frame for 15.1 s - motors stopped
+WARNING no camera frame for 16.1 s - motors stopped
+WARNING no camera frame for 17.1 s - motors stopped
+WARNING no camera frame for 18.1 s - motors stopped
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+ 3.7 fps  infer 310.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+WARNING no camera frame for 1.0 s - motors stopped
+WARNING no camera frame for 2.0 s - motors stopped
+[ WARN:0@178.411] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2017.699017 ms
+stream: dropping late frames (1.9 s behind)
+WARNING no camera frame for 3.0 s - motors stopped
+WARNING no camera frame for 4.0 s - motors stopped
+[ WARN:0@180.433] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2004.269293 ms
+stream: lost, reconnecting
+WARNING no camera frame for 5.0 s - motors stopped
+WARNING no camera frame for 6.0 s - motors stopped
+WARNING no camera frame for 7.0 s - motors stopped
+WARNING no camera frame for 8.0 s - motors stopped
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+ 3.6 fps  infer 319.3 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+WARNING no camera frame for 1.0 s - motors stopped
+WARNING no camera frame for 2.0 s - motors stopped
+[ WARN:0@187.714] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2023.985569 ms
+stream: dropping late frames (2.0 s behind)
+WARNING no camera frame for 3.0 s - motors stopped
+WARNING no camera frame for 4.0 s - motors stopped
+[ WARN:0@189.732] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2000.004074 ms
+stream: lost, reconnecting
+WARNING no camera frame for 5.0 s - motors stopped
+WARNING no camera frame for 6.0 s - motors stopped
+WARNING no camera frame for 7.0 s - motors stopped
+WARNING no camera frame for 8.0 s - motors stopped
+WARNING no camera frame for 9.1 s - motors stopped
+WARNING no camera frame for 10.1 s - motors stopped
+WARNING no camera frame for 11.1 s - motors stopped
+WARNING no camera frame for 12.1 s - motors stopped
+WARNING no camera frame for 13.1 s - motors stopped
+[ WARN:0@199.746] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 10013.183237 ms
+WARNING no camera frame for 14.1 s - motors stopped
+[ WARN:0@199.778] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 10044.556361 ms
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+ 3.7 fps  infer 288.9 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+WARNING no camera frame for 1.0 s - motors stopped
+[ WARN:0@201.976] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2010.172172 ms
+stream: lost, reconnecting
+WARNING no camera frame for 2.0 s - motors stopped
+WARNING no camera frame for 3.0 s - motors stopped
+WARNING no camera frame for 4.0 s - motors stopped
+WARNING no camera frame for 5.0 s - motors stopped
+WARNING no camera frame for 6.0 s - motors stopped
+WARNING no camera frame for 7.0 s - motors stopped
+WARNING no camera frame for 8.0 s - motors stopped
+WARNING no camera frame for 9.1 s - motors stopped
+WARNING no camera frame for 10.1 s - motors stopped
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+ 3.6 fps  infer 300.5 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.6 fps  infer 292.8 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.7 s behind)
+WARNING no camera frame for 2.0 s - motors stopped
+stream: dropping late frames (0.9 s behind)
+ 3.7 fps  infer 285.8 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+stream: dropping late frames (0.7 s behind)
+WARNING no camera frame for 1.0 s - motors stopped
+ 3.8 fps  infer 260.2 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 4.0 fps  infer 244.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+stream: dropping late frames (0.5 s behind)
+ 3.8 fps  infer 284.4 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 3.8 fps  infer 285.7 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+ 4.0 fps  infer 253.1 ms  persons 0  NO TARGET  -  steer +0.00 thr +0.00  L  +0 R  +0  
+WARNING no camera frame for 1.0 s - motors stopped
+stream: dropping late frames (1.7 s behind)
+WARNING no camera frame for 2.0 s - motors stopped
+WARNING no camera frame for 3.0 s - motors stopped
+stream: dropping late frames (2.1 s behind)
+WARNING no camera frame for 4.0 s - motors stopped
+stream: dropping late frames (3.1 s behind)
+WARNING no camera frame for 5.0 s - motors stopped
+WARNING no camera frame for 6.0 s - motors stopped
+stream: dropping late frames (4.5 s behind)
+WARNING no camera frame for 7.0 s - motors stopped
+stream: dropping late frames (5.8 s behind)
+WARNING no camera frame for 8.0 s - motors stopped
+WARNING no camera frame for 9.0 s - motors stopped
+stream: dropping late frames (3.3 s behind)
+WARNING no camera frame for 10.0 s - motors stopped
+WARNING no camera frame for 11.1 s - motors stopped
+[ WARN:0@232.649] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2011.828016 ms
+stream: dropping late frames (3.5 s behind)
+WARNING no camera frame for 12.1 s - motors stopped
+WARNING no camera frame for 13.1 s - motors stopped
+[ WARN:0@234.714] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 2044.060186 ms
+stream: lost, reconnecting
+WARNING no camera frame for 14.1 s - motors stopped
+WARNING no camera frame for 15.1 s - motors stopped
+WARNING no camera frame for 16.1 s - motors stopped
+WARNING no camera frame for 17.1 s - motors stopped
+[ WARN:0@244.810] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 10094.331333 ms
+[ WARN:0@244.814] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 10098.581589 ms
+terminate called without an active exception
+# exit 134  2026-09-11 15:43:10

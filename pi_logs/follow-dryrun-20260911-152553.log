@@ -1,0 +1,32 @@
+# follow-dryrun  2026-09-11 15:25:53  rpi5  temp=55.8'C
+# $ timeout -s INT 45 /home/rasp/rover-venv/bin/python -u follow_rover.py --source rtsp://192.168.1.11:554 --ref-dist 2 --ref-height 379
+follow_rover: model=auto imgsz=320 source=rtsp://192.168.1.11:554 transport=tcp cap=640x480 flip=False rotate=cw acquire_conf=0.6 lost_timeout=10.0 reid_dist=0.3 target_dist=1.0 ref_dist=2.0 ref_height=379.0 vfov=50.0 port=None max_pwm=150 min_pwm=90 steer=False band=0.25 hold=1.5 calibrate=False show=False view=8080
+stream: connected to rtsp://192.168.1.11:554 (640x360)
+camera started: rtsp://192.168.1.11:554
+model loaded yolo11n_320x192.onnx, input [320, 192]
+no rover link - dry run, motors not driven
+live view: http://<pi-address>:8080/
+Loading yolo11n_320x192.onnx for ONNX Runtime inference...
+Using ONNX Runtime 1.30.0 with CPUExecutionProvider
+ 0.0 fps  infer 1948.0 ms  persons 1  LOCKED id 1  4.96 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 0.2 fps  infer 1659.5 ms  persons 1  LOCKED id 1  4.04 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 1.2 fps  infer 973.2 ms  persons 1  LOCKED id 1  3.82 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 2.4 fps  infer 479.8 ms  persons 1  LOCKED id 1  3.77 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 3.2 fps  infer 312.1 ms  persons 1  LOCKED id 1  3.77 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 3.5 fps  infer 266.1 ms  persons 1  LOCKED id 1  3.83 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 3.9 fps  infer 240.2 ms  persons 1  LOCKED id 1  3.83 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.1 fps  infer 226.8 ms  persons 1  LOCKED id 1  3.86 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.1 fps  infer 230.8 ms  persons 1  LOCKED id 1  3.89 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.1 fps  infer 234.9 ms  persons 1  LOCKED id 1  3.83 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.2 fps  infer 229.9 ms  persons 1  LOCKED id 1  3.85 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.2 fps  infer 234.3 ms  persons 1  LOCKED id 1  3.91 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.2 fps  infer 234.0 ms  persons 1  LOCKED id 1  3.85 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.2 fps  infer 238.5 ms  persons 1  LOCKED id 1  3.85 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.1 fps  infer 242.1 ms  persons 1  LOCKED id 1  3.82 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.2 fps  infer 237.7 ms  persons 1  LOCKED id 1  3.85 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.2 fps  infer 233.9 ms  persons 1  LOCKED id 1  3.85 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.2 fps  infer 234.4 ms  persons 1  LOCKED id 1  3.85 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.3 fps  infer 229.2 ms  persons 1  LOCKED id 1  3.88 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.3 fps  infer 225.3 ms  persons 1  LOCKED id 1  3.91 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+ 4.2 fps  infer 233.3 ms  persons 1  LOCKED id 1  3.93 m  steer +0.00 thr +1.00  L+150 R+150  dry run
+# exit 124  2026-09-11 15:26:44

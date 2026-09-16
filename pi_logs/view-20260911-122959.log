@@ -1,0 +1,35 @@
+# view  2026-09-11 12:29:59  rpi5  temp=54.2'C
+# $ /home/rasp/rover-venv/bin/python -u camview.py
+[0:36:12.720556172] [8049] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[0:36:12.795368683] [8068] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/vc4/ov5647.json
+[0:36:12.812250016] [8068] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/soc/i2c0mux/i2c@1/ov5647@36' for pipeline handler rpi/vc4
+[0:36:12.812335797] [8068] [1;32m INFO [1;37mRPI [1;34mvc4.cpp:440 [0mRegistered camera /base/soc/i2c0mux/i2c@1/ov5647@36 to Unicam device /dev/media2 and ISP device /dev/media0
+[0:36:12.812396005] [8068] [1;32m INFO [1;37mRPI [1;34mpipeline_base.cpp:1107 [0mUsing configuration file '/usr/share/libcamera/pipeline/rpi/vc4/rpi_apps.yaml'
+[0:36:12.840721282] [8049] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 640x480-RGB888/SMPTE170M/Rec709/None/Full (1) 640x480-SGBRG10_CSI2P/RAW
+[0:36:12.841611542] [8068] [1;32m INFO [1;37mRPI [1;34mvc4.cpp:615 [0mSensor: /base/soc/i2c0mux/i2c@1/ov5647@36 - Selected sensor format: 640x480-SGBRG10_1X10/RAW - Selected unicam format: 640x480-pGAA/RAW
+camera started 640x480   keys: q quit, s snapshot, f flip
+[0:36:13.966181701] [8068] [1;33m WARN [1;37mV4L2 [1;34mv4l2_videodevice.cpp:2155 [0;32m/dev/video0[10:cap]: [0mDequeue timer of 1000000.00us has expired!
+[0:36:13.966320190] [8068] [1;31mERROR [1;37mRPI [1;34mpipeline_base.cpp:1346 [0mCamera frontend has timed out!
+[0:36:13.966346232] [8068] [1;31mERROR [1;37mRPI [1;34mpipeline_base.cpp:1347 [0mPlease check that your camera sensor connector is attached securely.
+[0:36:13.966370034] [8068] [1;31mERROR [1;37mRPI [1;34mpipeline_base.cpp:1348 [0mAlternatively, try another cable and/or sensor.
+Traceback (most recent call last):
+  File "/home/rasp/HumanFollowing/camview.py", line 74, in <module>
+    main()
+  File "/home/rasp/HumanFollowing/camview.py", line 69, in main
+    cam.release()
+  File "/home/rasp/HumanFollowing/picam.py", line 49, in release
+    self.cam.stop()
+  File "/usr/lib/python3/dist-packages/picamera2/picamera2.py", line 1335, in stop
+    self.dispatch_functions([self.stop_], wait=True, immediate=True)
+  File "/usr/lib/python3/dist-packages/picamera2/picamera2.py", line 1466, in dispatch_functions
+    return job.get_result(timeout=timeout) if wait else job
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/picamera2/job.py", line 87, in get_result
+    return self._future.result(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/_base.py", line 451, in result
+    self._condition.wait(timeout)
+  File "/usr/lib/python3.11/threading.py", line 320, in wait
+    waiter.acquire()
+KeyboardInterrupt
+# exit 130  2026-09-11 12:30:58

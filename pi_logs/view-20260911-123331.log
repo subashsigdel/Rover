@@ -1,0 +1,14 @@
+# view  2026-09-11 12:33:31  rpi5  temp=52.1'C
+# $ /home/rasp/rover-venv/bin/python -u camview.py
+[0:39:43.089871787] [8437] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:330 [0mlibcamera v0.5.2+99-bfd68f78
+[0:39:43.137999503] [8451] [1;32m INFO [1;37mIPAProxy [1;34mipa_proxy.cpp:180 [0mUsing tuning file /usr/share/libcamera/ipa/rpi/vc4/ov5647.json
+[0:39:43.152850723] [8451] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:220 [0mAdding camera '/base/soc/i2c0mux/i2c@1/ov5647@36' for pipeline handler rpi/vc4
+[0:39:43.152932390] [8451] [1;32m INFO [1;37mRPI [1;34mvc4.cpp:440 [0mRegistered camera /base/soc/i2c0mux/i2c@1/ov5647@36 to Unicam device /dev/media2 and ISP device /dev/media0
+[0:39:43.153016191] [8451] [1;32m INFO [1;37mRPI [1;34mpipeline_base.cpp:1107 [0mUsing configuration file '/usr/share/libcamera/pipeline/rpi/vc4/rpi_apps.yaml'
+[0:39:43.169759647] [8437] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1215 [0mconfiguring streams: (0) 640x480-RGB888/SMPTE170M/Rec709/None/Full (1) 640x480-SGBRG10_CSI2P/RAW
+[0:39:43.170435844] [8451] [1;32m INFO [1;37mRPI [1;34mvc4.cpp:615 [0mSensor: /base/soc/i2c0mux/i2c@1/ov5647@36 - Selected sensor format: 640x480-SGBRG10_1X10/RAW - Selected unicam format: 640x480-pGAA/RAW
+[0:39:44.282168920] [8451] [1;33m WARN [1;37mV4L2 [1;34mv4l2_videodevice.cpp:2155 [0;32m/dev/video0[10:cap]: [0mDequeue timer of 1000000.00us has expired!
+[0:39:44.282305378] [8451] [1;31mERROR [1;37mRPI [1;34mpipeline_base.cpp:1346 [0mCamera frontend has timed out!
+[0:39:44.282331211] [8451] [1;31mERROR [1;37mRPI [1;34mpipeline_base.cpp:1347 [0mPlease check that your camera sensor connector is attached securely.
+[0:39:44.282354909] [8451] [1;31mERROR [1;37mRPI [1;34mpipeline_base.cpp:1348 [0mAlternatively, try another cable and/or sensor.
+# exit 137  2026-09-11 12:35:50
