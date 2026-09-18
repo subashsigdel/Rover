@@ -1,6 +1,19 @@
 <div align="center">
 
-<img src="rover.jpeg" width="380" alt="The rover: PVC frame, four geared wheels, a USB webcam at the front edge, 12 V battery">
+<table>
+<tr>
+<td align="center"><img src="rover.jpeg" height="230" alt="The assembled rover on concrete: PVC frame, four geared wheels, red deck, a USB webcam clamped to the front edge, 12 V lead-acid battery alongside"></td>
+<td align="center"><img src="side-view-dimensioned.png" height="230" alt="Chassis side view with dimensions: 25 in overall length, 12 in ride height, 16 in frame rails, 5 in wheel diameter, 90 degree corner joints"></td>
+<td align="center"><img src="three-quarter-view-dimensioned.png" height="230" alt="Chassis three-quarter view with dimensions: 30 in diagonal, 12 in and 9 in frame members, 45 degree bogie joints"></td>
+</tr>
+<tr>
+<td align="center"><sub><b>Assembled</b><br>webcam + 12 V battery</sub></td>
+<td align="center"><sub><b>Side view</b><br>25 in long · 12 in tall</sub></td>
+<td align="center"><sub><b>Three-quarter</b><br>30 in diagonal</sub></td>
+</tr>
+</table>
+
+<sub>Chassis dimensions measured with <a href="tools/dimension-sheet"><code>tools/dimension-sheet</code></a>.</sub>
 
 # Rover
 

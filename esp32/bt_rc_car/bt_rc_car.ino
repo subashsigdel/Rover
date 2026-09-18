@@ -2,14 +2,14 @@
 
 BluetoothSerial BT;
 
-#define L_RPWM 26
-#define L_LPWM 25
+#define L_RPWM 25
+#define L_LPWM 26
 
 #define R_RPWM 18
 #define R_LPWM 19
 
-int speed = 100;
-int turnSpeed = 200;
+int speed = 250;
+int turnSpeed = 250;
 
 void stopAll() {
   analogWrite(L_RPWM, 0);

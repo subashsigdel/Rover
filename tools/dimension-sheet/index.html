@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dimension Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Online: IBM Plex. Offline: falls back to the system stack automatically. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#EDF0F1; --surface:#FFFFFF; --surface-2:#F6F8F9;
+  --ink:#131A1E; --muted:#5C6B74; --faint:#8695A0;
+  --rule:#D2DADE; --rule-strong:#B5C1C7;
+  --accent:#186B87; --accent-soft:#DCEDF3; --accent-ink:#0E4D62; --on-accent:#FFFFFF;
+  --warn:#9A5B12; --warn-soft:#FBEEDA;
+  --grid:#DCE3E6;
+  --shadow:0 1px 2px rgba(19,26,30,.07), 0 8px 24px -12px rgba(19,26,30,.22);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F1418; --surface:#181F25; --surface-2:#141B20;
+    --ink:#E3EBEF; --muted:#90A1AB; --faint:#6D7E89;
+    --rule:#28323A; --rule-strong:#3A4750;
+    --accent:#56C2DD; --accent-soft:#14323D; --accent-ink:#9EDCEC; --on-accent:#07161C;
+    --warn:#E0AC61; --warn-soft:#332616;
+    --grid:#1C242A;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F1418; --surface:#181F25; --surface-2:#141B20;
+  --ink:#E3EBEF; --muted:#90A1AB; --faint:#6D7E89;
+  --rule:#28323A; --rule-strong:#3A4750;
+  --accent:#56C2DD; --accent-soft:#14323D; --accent-ink:#9EDCEC; --on-accent:#07161C;
+  --warn:#E0AC61; --warn-soft:#332616;
+  --grid:#1C242A;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:14px; line-height:1.45; -webkit-font-smoothing:antialiased;
+}
+button,input,select{font:inherit;color:inherit}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+
+/* ---------- shell ---------- */
+.app{
+  height:100%; display:grid;
+  grid-template-columns:minmax(0,1fr) 332px;
+  grid-template-rows:auto minmax(0,1fr);
+  grid-template-areas:"bar bar" "stage rail";
+}
+.bar{
+  grid-area:bar; display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:10px 16px; padding-top:calc(10px + env(safe-area-inset-top,0px));
+  background:var(--surface); border-bottom:1px solid var(--rule);
+}
+.brand{display:flex;align-items:baseline;gap:9px;min-width:0}
+.brand b{font-weight:600;letter-spacing:-.01em;white-space:nowrap}
+.brand .tag{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--faint);white-space:nowrap;
+}
+.titlefield{
+  flex:1 1 180px; min-width:120px; background:var(--surface-2);
+  border:1px solid var(--rule); border-radius:5px; padding:6px 10px;
+  font-family:"IBM Plex Mono",monospace; font-size:12.5px;
+}
+.titlefield:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent}
+.bar-actions{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--surface); border:1px solid var(--rule-strong); border-radius:5px;
+  padding:6px 12px; font-size:13px; font-weight:500; cursor:pointer;
+  transition:background .12s, border-color .12s;
+}
+.btn:hover:not(:disabled){background:var(--surface-2);border-color:var(--accent)}
+.btn:disabled{opacity:.42;cursor:not-allowed}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600}
+.btn.primary:hover:not(:disabled){filter:brightness(1.08);background:var(--accent)}
+.btn.ghost{border-color:transparent;background:transparent;color:var(--muted);padding:6px 8px}
+.btn.ghost:hover:not(:disabled){background:var(--surface-2);color:var(--ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- stage ---------- */
+.stage{
+  grid-area:stage; position:relative; overflow:auto; min-height:0;
+  background-color:var(--ground);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:26px 26px;
+  display:flex; align-items:center; justify-content:center; padding:22px;
+}
+.sheet{
+  margin:auto; position:relative; background:var(--surface); box-shadow:var(--shadow);
+  border:1px solid var(--rule-strong); line-height:0;
+}
+canvas{display:block;touch-action:none;max-width:none}
+#drop{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
+  margin:auto; padding:48px 32px; max-width:440px; text-align:center;
+  border:2px dashed var(--rule-strong); border-radius:12px; background:var(--surface);
+}
+#drop.over{border-color:var(--accent);background:var(--accent-soft)}
+#drop svg{width:40px;height:40px;stroke:var(--faint);fill:none;stroke-width:1.3}
+#drop h3{margin:0;font-size:15px;font-weight:600}
+#drop p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.6}
+.hint{
+  position:absolute; left:50%; bottom:14px; transform:translateX(-50%);
+  background:var(--ink); color:var(--surface); font-size:12px; font-weight:500;
+  padding:6px 13px; border-radius:20px; white-space:nowrap; pointer-events:none;
+  opacity:0; transition:opacity .18s; z-index:5;
+}
+.hint.on{opacity:.93}
+
+/* ---------- rail ---------- */
+.rail{
+  grid-area:rail; overflow-y:auto; min-height:0;
+  background:var(--surface); border-left:1px solid var(--rule);
+  padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));
+}
+.sect{padding:14px 16px;border-bottom:1px solid var(--rule)}
+.sect h2{
+  margin:0 0 10px; font-family:"IBM Plex Mono",monospace; font-size:10px;
+  font-weight:500; letter-spacing:.13em; text-transform:uppercase; color:var(--faint);
+}
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.tool{
+  display:flex;align-items:center;gap:8px; text-align:left;
+  background:var(--surface-2); border:1px solid var(--rule); border-radius:5px;
+  padding:8px 9px; cursor:pointer; font-size:12.5px; font-weight:500;
+}
+.tool:hover{border-color:var(--accent)}
+.tool[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
+.tool .k{
+  margin-left:auto; font-family:"IBM Plex Mono",monospace; font-size:10px;
+  color:var(--faint); border:1px solid var(--rule-strong); border-radius:3px;
+  padding:0 4px; line-height:15px;
+}
+.tool[aria-pressed="true"] .k{color:var(--accent-ink);border-color:currentColor}
+.tool svg{flex:none;width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6}
+
+.row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.row:last-child{margin-bottom:0}
+.row label{font-size:12px;color:var(--muted);flex:none;min-width:58px}
+.inp{
+  flex:1; min-width:0; background:var(--surface-2); border:1px solid var(--rule);
+  border-radius:5px; padding:6px 9px; font-size:13px;
+}
+.inp.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.inp:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent}
+input[type=range]{flex:1;accent-color:var(--accent);min-width:0}
+
+.swatches{display:flex;gap:6px}
+.sw{width:26px;height:26px;border-radius:5px;border:2px solid transparent;cursor:pointer;padding:0}
+.sw[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 2px var(--surface)}
+
+.scalebox{
+  background:var(--surface-2); border:1px solid var(--rule); border-radius:6px; padding:10px 11px;
+}
+.scalebox.set{background:var(--accent-soft);border-color:var(--accent)}
+.scalebox .hd{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.scalebox .dot{width:7px;height:7px;border-radius:50%;background:var(--faint);flex:none}
+.scalebox.set .dot{background:var(--accent)}
+.scalebox .hd span{font-size:12px;font-weight:600}
+.scalebox p{margin:0;font-size:11.5px;color:var(--muted);line-height:1.5}
+.scalebox .val{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent-ink);font-weight:500}
+
+/* ---------- annotation list ---------- */
+.list{display:flex;flex-direction:column;gap:4px}
+.item{
+  display:flex;align-items:center;gap:9px; width:100%; text-align:left; cursor:pointer;
+  background:transparent;border:1px solid transparent;border-radius:5px;padding:6px 8px;
+}
+.item:hover{background:var(--surface-2)}
+.item[aria-current="true"]{background:var(--accent-soft);border-color:var(--accent)}
+.item .chip{width:10px;height:10px;border-radius:2px;flex:none}
+.item .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12.5px}
+.item .vl{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);
+  flex:none;font-variant-numeric:tabular-nums;
+}
+.empty{font-size:12px;color:var(--faint);margin:0;line-height:1.6}
+
+/* ---------- page tabs ---------- */
+.pages{display:flex;flex-direction:column;gap:5px}
+.page-tab{
+  display:flex;align-items:center;gap:10px;width:100%;text-align:left;cursor:pointer;
+  background:var(--surface-2);border:1px solid var(--rule);border-radius:6px;padding:6px 9px;
+}
+.page-tab[aria-current="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.page-tab .th{width:42px;height:32px;object-fit:cover;border-radius:3px;flex:none;background:var(--rule)}
+.page-tab .pn{flex:1;min-width:0;font-size:12.5px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.page-tab .ct{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--muted);flex:none}
+
+.note{
+  margin:0; font-size:11.5px; line-height:1.6; color:var(--muted);
+}
+.note kbd{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;background:var(--surface-2);
+  border:1px solid var(--rule-strong);border-radius:3px;padding:0 4px;color:var(--ink);
+}
+.stat{
+  display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);
+  background:var(--warn-soft);border-radius:5px;padding:7px 10px;margin-top:10px;
+}
+.stat b{color:var(--warn);font-weight:600}
+
+@media (max-width:860px){
+  html,body{height:auto}
+  .app{height:auto;grid-template-columns:minmax(0,1fr);grid-template-areas:"bar" "stage" "rail"}
+  .stage{height:56vh;padding:14px}
+  .rail{border-left:none;border-top:1px solid var(--rule)}
+  .bar-actions{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* --- standalone reset (the hosted build gets this from its shell) --- */
+[hidden]{display:none!important}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<script src="vendor/jspdf.umd.min.js"></script>
+
+<div class="app">
+  <header class="bar">
+    <div class="brand"><b>Dimension Sheet</b><span class="tag">rev A</span></div>
+    <input id="docTitle" class="titlefield" value="Rocker-Bogie Rover — Chassis" aria-label="Drawing title">
+    <div class="bar-actions">
+      <button class="btn ghost" id="btnUndo" title="Undo (Ctrl+Z)">Undo</button>
+      <button class="btn" id="btnPng">Export PNG</button>
+      <button class="btn" id="btnOpen">Open…</button>
+      <button class="btn" id="btnSave">Save</button>
+      <button class="btn primary" id="btnPdf">Export PDF</button>
+      <input type="file" id="projIn" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <div class="stage" id="stage">
+    <div class="sheet" id="sheet" hidden><canvas id="cv"></canvas></div>
+    <div id="drop">
+      <svg viewBox="0 0 24 24"><path d="M3 16.5V19a2 2 0 002 2h14a2 2 0 002-2v-2.5M12 15V3m0 0L8 7m4-4l4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>Drop a photo here</h3>
+      <p>Or use <b>Add photo…</b> in the panel. Everything runs locally — nothing is uploaded.</p>
+    </div>
+    <div class="hint" id="hint"></div>
+  </div>
+
+  <aside class="rail">
+    <div class="sect">
+      <h2>Tool</h2>
+      <div class="tools">
+        <button class="tool" data-tool="select" aria-pressed="true">
+          <svg viewBox="0 0 16 16"><path d="M3 2l9 6-4 .6L6.4 13z" stroke-linejoin="round"/></svg>Select<span class="k">V</span></button>
+        <button class="tool" data-tool="dim" aria-pressed="false">
+          <svg viewBox="0 0 16 16"><path d="M2 8h12M2 5v6M14 5v6M4.5 6.2L2.6 8l1.9 1.8M11.5 6.2L13.4 8l-1.9 1.8" stroke-linecap="round"/></svg>Dimension<span class="k">D</span></button>
+        <button class="tool" data-tool="leader" aria-pressed="false">
+          <svg viewBox="0 0 16 16"><path d="M2.5 13.5L8 8l6 .2M4 12.6l-1.5.9.6-1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Callout<span class="k">L</span></button>
+        <button class="tool" data-tool="cal" aria-pressed="false">
+          <svg viewBox="0 0 16 16"><path d="M1.6 9.5l7.9-7.9 4.9 4.9-7.9 7.9zM5 3.8l1.4 1.4M7.3 5.9l1.4 1.4M9.6 8.2L11 9.6" stroke-linejoin="round"/></svg>Calibrate<span class="k">C</span></button>
+      </div>
+      <p class="note" style="margin-top:10px">Drag across the feature you want to measure. Then drag the middle handle to push the dimension line clear of the part.</p>
+    </div>
+
+    <div class="sect">
+      <h2>Scale</h2>
+      <div class="scalebox" id="scaleBox">
+        <div class="hd"><span class="dot"></span><span id="scaleState">Not calibrated</span></div>
+        <p id="scaleHelp">Pick <b>Calibrate</b> and drag across something you know the real size of — a wheel diameter, a pipe length. Every dimension after that reads out in real units.</p>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <label for="unitSel">Units</label>
+        <select class="inp" id="unitSel"><option>mm</option><option>cm</option><option>in</option></select>
+        <select class="inp" id="decSel" style="flex:0 0 76px" aria-label="Decimal places">
+          <option value="0">0 dp</option><option value="1" selected>1 dp</option><option value="2">2 dp</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="sect" id="propSect">
+      <h2>Selected</h2>
+      <div id="propBody"><p class="empty">Nothing selected. Click a dimension on the drawing, or pick a tool and drag.</p></div>
+    </div>
+
+    <div class="sect">
+      <h2>Style</h2>
+      <div class="row">
+        <label>Ink</label>
+        <div class="swatches" id="swatches"></div>
+      </div>
+      <div class="row"><label for="wSlider">Weight</label><input type="range" id="wSlider" min="0.6" max="2.4" step="0.1" value="1"></div>
+      <div class="row"><label for="tSlider">Text</label><input type="range" id="tSlider" min="0.6" max="2" step="0.05" value="1"></div>
+      <div class="row"><label for="zSlider">Zoom</label><input type="range" id="zSlider" min="1" max="4" step="0.25" value="1"><span class="mono" id="zVal" style="font-size:11.5px;color:var(--muted);flex:none;width:34px;text-align:right">100%</span></div>
+    </div>
+
+    <div class="sect">
+      <h2>Dimensions on this view</h2>
+      <div class="list" id="annList"></div>
+    </div>
+
+    <div class="sect">
+      <h2>Views</h2>
+      <div class="pages" id="pageList"></div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="btn" id="btnAdd" style="flex:1">Add photo…</button>
+        <input type="file" id="fileIn" accept="image/*" multiple hidden>
+      </div>
+      <div class="stat" id="calStat"><b>Note</b><span>Labels start as <span class="mono">?? mm</span> — type your measured values in.</span></div>
+    </div>
+
+    <div class="sect">
+      <p class="note"><kbd>V</kbd> select · <kbd>D</kbd> dimension · <kbd>L</kbd> callout · <kbd>C</kbd> calibrate · <kbd>Del</kbd> remove · <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo · arrow keys nudge · <kbd>Shift</kbd> while dragging locks to horizontal, vertical or 45°.</p>
+    </div>
+  </aside>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ============== state ============== */
+var INKS = ["#E01B46","#F0A020","#12A594","#1B65E0","#101418","#FFFFFF"];
+var state = {
+  pages: [], active: 0, tool: "select", sel: null,
+  ink: INKS[0], weight: 1, textScale: 1, unit: "mm", dec: 1,
+  zoom: 1, history: []
+};
+var uid = 0;
+function nid(){ return "a" + (++uid); }
+
+function mkPage(name, img){
+  return { name:name, img:img, w:img.naturalWidth, h:img.naturalHeight,
+           anns:[], pxPerUnit:null, calUnit:"mm" };
+}
+function P(){ return state.pages[state.active]; }
+
+/* ============== geometry ============== */
+function sub(a,b){ return {x:a.x-b.x, y:a.y-b.y}; }
+function len(v){ return Math.hypot(v.x,v.y); }
+function norm(v){ var l=len(v)||1; return {x:v.x/l, y:v.y/l}; }
+function perp(v){ return {x:-v.y, y:v.x}; }
+function add(a,v,s){ return {x:a.x+v.x*s, y:a.y+v.y*s}; }
+function distToSeg(p,a,b){
+  var vx=b.x-a.x, vy=b.y-a.y, wx=p.x-a.x, wy=p.y-a.y;
+  var L=vx*vx+vy*vy; if(L<1e-9) return Math.hypot(wx,wy);
+  var t=Math.max(0,Math.min(1,(wx*vx+wy*vy)/L));
+  return Math.hypot(p.x-(a.x+vx*t), p.y-(a.y+vy*t));
+}
+/* the two ends of the offset dimension line */
+function dimEnds(an){
+  var d = norm(sub(an.p2,an.p1)), n = perp(d);
+  return { d:d, n:n, a1:add(an.p1,n,an.off), a2:add(an.p2,n,an.off) };
+}
+function annMid(an){
+  if(an.type==="leader") return an.p2;
+  var e = dimEnds(an);
+  return {x:(e.a1.x+e.a2.x)/2, y:(e.a1.y+e.a2.y)/2};
+}
+
+/* ============== measurement text ============== */
+function measure(an){
+  var p = P();
+  if(!p.pxPerUnit) return null;
+  return len(sub(an.p2,an.p1)) / p.pxPerUnit;
+}
+function autoText(an){
+  var v = measure(an);
+  if(v === null) return "?? " + state.unit;
+  return v.toFixed(state.dec) + " " + P().calUnit;
+}
+function annText(an){
+  if(an.type === "leader" || an.auto === false) return an.text;
+  return autoText(an);
+}
+function refreshAuto(){
+  state.pages.forEach(function(p){
+    p.anns.forEach(function(a){ if(a.type==="dim" && a.auto !== false) a.text = ""; });
+  });
+}
+
+/* ============== history ============== */
+function snapshot(){
+  try{
+    state.history.push(JSON.stringify(state.pages.map(function(p){
+      return { anns:p.anns, pxPerUnit:p.pxPerUnit, calUnit:p.calUnit };
+    })));
+    if(state.history.length > 60) state.history.shift();
+  }catch(e){}
+}
+function undo(){
+  if(!state.history.length) return;
+  var snap;
+  try{ snap = JSON.parse(state.history.pop()); }catch(e){ return; }
+  snap.forEach(function(s,i){
+    if(!state.pages[i]) return;
+    state.pages[i].anns = s.anns;
+    state.pages[i].pxPerUnit = s.pxPerUnit;
+    state.pages[i].calUnit = s.calUnit;
+  });
+  state.sel = null;
+  var pb = document.getElementById("propBody");
+  if(pb) pb.dataset.for = "";
+  renderAll();
+}
+
+/* ============== canvas drawing ============== */
+var cv = document.getElementById("cv");
+var ctx = cv.getContext("2d");
+var stage = document.getElementById("stage");
+var sheet = document.getElementById("sheet");
+
+function fitScale(){
+  var p = P(); if(!p) return 1;
+  var padW = stage.clientWidth - 44, padH = stage.clientHeight - 44;
+  if(padW <= 0 || padH <= 0) return 1;
+  return Math.min(padW / p.w, padH / p.h, 1.6);
+}
+function dispScale(){ return fitScale() * state.zoom; }
+
+function roundRect(c,x,y,w,h,r){
+  if(c.roundRect){ c.beginPath(); c.roundRect(x,y,w,h,r); return; }
+  c.beginPath();
+  c.moveTo(x+r,y); c.lineTo(x+w-r,y); c.quadraticCurveTo(x+w,y,x+w,y+r);
+  c.lineTo(x+w,y+h-r); c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  c.lineTo(x+r,y+h); c.quadraticCurveTo(x,y+h,x,y+h-r);
+  c.lineTo(x,y+r); c.quadraticCurveTo(x,y,x+r,y); c.closePath();
+}
+function arrow(c,tip,dir,size){
+  var n = perp(dir);
+  c.beginPath();
+  c.moveTo(tip.x, tip.y);
+  c.lineTo(tip.x + dir.x*size + n.x*size*0.32, tip.y + dir.y*size + n.y*size*0.32);
+  c.lineTo(tip.x + dir.x*size - n.x*size*0.32, tip.y + dir.y*size - n.y*size*0.32);
+  c.closePath(); c.fill();
+}
+function isLight(hex){
+  var h = hex.replace("#","");
+  var r = parseInt(h.slice(0,2),16), g = parseInt(h.slice(2,4),16), b = parseInt(h.slice(4,6),16);
+  return (0.299*r + 0.587*g + 0.114*b) > 165;
+}
+/* label chip, drawn rotated at `at`, aligned to `ang` */
+function chip(c, at, ang, text, ink, fs){
+  c.save();
+  c.translate(at.x, at.y);
+  c.rotate(ang);
+  c.font = "600 " + fs + 'px "IBM Plex Mono", ui-monospace, monospace';
+  c.textAlign = "center"; c.textBaseline = "middle";
+  var w = c.measureText(text).width + fs*0.92;
+  var h = fs * 1.62;
+  var bg = isLight(ink) ? "rgba(16,20,24,.84)" : "rgba(255,255,255,.93)";
+  c.fillStyle = bg;
+  roundRect(c, -w/2, -h/2, w, h, fs*0.34); c.fill();
+  c.lineWidth = Math.max(1, fs*0.055); c.strokeStyle = ink; c.stroke();
+  c.fillStyle = ink; c.fillText(text, 0, fs*0.06);
+  c.restore();
+}
+
+function drawAnn(c, an, lw, fs, selected){
+  var ink = an.ink || state.ink;
+  c.strokeStyle = ink; c.fillStyle = ink;
+  c.lineWidth = lw; c.lineCap = "round"; c.lineJoin = "round";
+  var ah = lw * 5.2;
+
+  if(an.type === "leader"){
+    c.beginPath(); c.moveTo(an.p1.x, an.p1.y); c.lineTo(an.p2.x, an.p2.y); c.stroke();
+    var d = norm(sub(an.p2, an.p1));
+    arrow(c, an.p1, d, ah);
+    var side = an.p2.x >= an.p1.x ? 1 : -1;
+    chip(c, {x: an.p2.x + side*(fs*0.3), y: an.p2.y - fs*0.9}, 0, annText(an) || "Label", ink, fs);
+    if(selected) handles(c, [an.p1, an.p2], lw);
+    return;
+  }
+
+  var e = dimEnds(an);
+  /* extension lines from the measured points out past the dimension line */
+  if(Math.abs(an.off) > lw*2.5){
+    var s = an.off >= 0 ? 1 : -1;
+    c.beginPath();
+    c.moveTo(an.p1.x + e.n.x*lw*2.2*s, an.p1.y + e.n.y*lw*2.2*s);
+    c.lineTo(e.a1.x + e.n.x*lw*3.4*s, e.a1.y + e.n.y*lw*3.4*s);
+    c.moveTo(an.p2.x + e.n.x*lw*2.2*s, an.p2.y + e.n.y*lw*2.2*s);
+    c.lineTo(e.a2.x + e.n.x*lw*3.4*s, e.a2.y + e.n.y*lw*3.4*s);
+    c.lineWidth = lw * 0.72; c.stroke(); c.lineWidth = lw;
+  }
+  /* dimension line + outward arrows */
+  c.beginPath(); c.moveTo(e.a1.x, e.a1.y); c.lineTo(e.a2.x, e.a2.y); c.stroke();
+  arrow(c, e.a1, e.d, ah);
+  arrow(c, e.a2, {x:-e.d.x, y:-e.d.y}, ah);
+  /* value, upright */
+  var ang = Math.atan2(e.d.y, e.d.x);
+  if(ang > Math.PI/2 || ang < -Math.PI/2) ang += Math.PI;
+  chip(c, annMid(an), ang, annText(an), ink, fs);
+
+  if(selected) handles(c, [an.p1, an.p2, annMid(an)], lw);
+}
+function handles(c, pts, lw){
+  var r = lw * 3.4;
+  pts.forEach(function(p,i){
+    c.beginPath(); c.arc(p.x, p.y, r, 0, Math.PI*2);
+    c.fillStyle = i === 2 ? "#FFFFFF" : "#FFFFFF"; c.fill();
+    c.lineWidth = lw*0.9; c.strokeStyle = "#1B65E0"; c.stroke();
+  });
+}
+
+/* the in-progress drag */
+var draft = null;
+
+function drawScene(c, p, opts){
+  c.drawImage(p.img, 0, 0, p.w, p.h);
+  var lw = Math.max(1.5, p.w / 560) * state.weight;
+  var fs = Math.max(12, p.w / 38) * state.textScale;
+  p.anns.forEach(function(an){
+    drawAnn(c, an, lw, fs, opts.showHandles && an.id === state.sel);
+  });
+  if(opts.showHandles && draft){
+    c.save(); c.globalAlpha = 0.85;
+    if(draft.tool === "cal"){
+      c.strokeStyle = "#1B65E0"; c.fillStyle = "#1B65E0"; c.lineWidth = lw;
+      c.setLineDash([lw*3, lw*2.2]);
+      c.beginPath(); c.moveTo(draft.p1.x, draft.p1.y); c.lineTo(draft.p2.x, draft.p2.y); c.stroke();
+      c.setLineDash([]);
+      var dd = norm(sub(draft.p2, draft.p1));
+      arrow(c, draft.p1, dd, lw*5.2);
+      arrow(c, draft.p2, {x:-dd.x,y:-dd.y}, lw*5.2);
+    } else {
+      drawAnn(c, {type:draft.tool, p1:draft.p1, p2:draft.p2, off:0, text:"", auto:true, ink:state.ink}, lw, fs, false);
+    }
+    c.restore();
+  }
+}
+
+function paint(){
+  var p = P(); if(!p) return;
+  var s = dispScale(), dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+  var cssW = Math.round(p.w * s), cssH = Math.round(p.h * s);
+  cv.style.width = cssW + "px"; cv.style.height = cssH + "px";
+  cv.width = Math.round(cssW * dpr); cv.height = Math.round(cssH * dpr);
+  ctx.setTransform(s*dpr, 0, 0, s*dpr, 0, 0);
+  ctx.clearRect(0, 0, p.w, p.h);
+  drawScene(ctx, p, {showHandles:true});
+}
+
+/* full-resolution render for export */
+function renderFull(p){
+  var c = document.createElement("canvas");
+  c.width = p.w; c.height = p.h;
+  var x = c.getContext("2d");
+  var keepSel = state.sel, keepDraft = draft;
+  state.sel = null; draft = null;
+  drawScene(x, p, {showHandles:false});
+  state.sel = keepSel; draft = keepDraft;
+  return c;
+}
+
+/* ============== pointer input ============== */
+function toImg(ev){
+  var r = cv.getBoundingClientRect(), s = dispScale();
+  return { x:(ev.clientX - r.left)/s, y:(ev.clientY - r.top)/s };
+}
+function constrain(a, b, on){
+  if(!on) return b;
+  var dx = b.x-a.x, dy = b.y-a.y;
+  var ang = Math.atan2(dy,dx), step = Math.PI/4;
+  var snapped = Math.round(ang/step)*step, L = Math.hypot(dx,dy);
+  return { x:a.x + Math.cos(snapped)*L, y:a.y + Math.sin(snapped)*L };
+}
+function hitTest(pt){
+  var p = P(), tol = 11 / dispScale();
+  var lw = Math.max(1.5, p.w/560) * state.weight, hr = lw*3.4 + tol*0.7;
+  /* handles of the current selection win */
+  var selAnn = p.anns.filter(function(a){ return a.id === state.sel; })[0];
+  if(selAnn){
+    var pts = selAnn.type === "leader"
+      ? [{p:selAnn.p1,k:"p1"},{p:selAnn.p2,k:"p2"}]
+      : [{p:selAnn.p1,k:"p1"},{p:selAnn.p2,k:"p2"},{p:annMid(selAnn),k:"mid"}];
+    for(var i=0;i<pts.length;i++)
+      if(len(sub(pt, pts[i].p)) < hr) return {ann:selAnn, part:pts[i].k};
+  }
+  for(var j = p.anns.length-1; j >= 0; j--){
+    var a = p.anns[j];
+    var A = a.type === "leader" ? a.p1 : dimEnds(a).a1;
+    var B = a.type === "leader" ? a.p2 : dimEnds(a).a2;
+    if(distToSeg(pt, A, B) < tol) return {ann:a, part:"body"};
+    if(len(sub(pt, annMid(a))) < tol*2.4) return {ann:a, part:"body"};
+  }
+  return null;
+}
+
+var drag = null;
+cv.addEventListener("pointerdown", function(ev){
+  var p = P(); if(!p) return;
+  cv.setPointerCapture(ev.pointerId);
+  var pt = toImg(ev);
+  if(state.tool === "select"){
+    var hit = hitTest(pt);
+    if(hit){
+      state.sel = hit.ann.id;
+      snapshot();
+      drag = { mode:"move", ann:hit.ann, part:hit.part, start:pt,
+               o1:{x:hit.ann.p1.x,y:hit.ann.p1.y}, o2:{x:hit.ann.p2.x,y:hit.ann.p2.y},
+               ooff:hit.ann.off };
+    } else {
+      state.sel = null;
+    }
+    renderAll();
+    return;
+  }
+  draft = { tool:state.tool, p1:pt, p2:pt };
+  drag = { mode:"draw" };
+  paint();
+});
+cv.addEventListener("pointermove", function(ev){
+  if(!drag) return;
+  var pt = toImg(ev);
+  if(drag.mode === "draw"){
+    draft.p2 = constrain(draft.p1, pt, ev.shiftKey);
+    paint();
+    return;
+  }
+  var an = drag.ann, dx = pt.x - drag.start.x, dy = pt.y - drag.start.y;
+  if(drag.part === "p1"){ an.p1 = constrain(an.p2, {x:drag.o1.x+dx, y:drag.o1.y+dy}, ev.shiftKey); }
+  else if(drag.part === "p2"){ an.p2 = constrain(an.p1, {x:drag.o2.x+dx, y:drag.o2.y+dy}, ev.shiftKey); }
+  else if(drag.part === "mid" && an.type !== "leader"){
+    var n = perp(norm(sub(an.p2, an.p1)));
+    an.off = drag.ooff + (dx*n.x + dy*n.y);
+  } else {
+    an.p1 = {x:drag.o1.x+dx, y:drag.o1.y+dy};
+    an.p2 = {x:drag.o2.x+dx, y:drag.o2.y+dy};
+  }
+  paint(); syncProps(); syncList();
+});
+function endDrag(ev){
+  if(!drag) return;
+  if(drag.mode === "draw" && draft){
+    var d = draft; draft = null; drag = null;
+    if(len(sub(d.p2, d.p1)) < 8 / dispScale()){ paint(); return; }
+    if(d.tool === "cal"){ askCalibration(d); return; }
+    snapshot();
+    var an = { id:nid(), type:d.tool, name:d.tool === "leader" ? "Callout" : "Dimension",
+               p1:d.p1, p2:d.p2, off:0, auto:true, text:d.tool === "leader" ? "Label" : "",
+               ink:state.ink };
+    P().anns.push(an);
+    state.sel = an.id;
+    setTool("select");
+    renderAll();
+    if(d.tool !== "leader" && !P().pxPerUnit) flash("Type the measured value in the Selected panel →");
+    return;
+  }
+  drag = null; draft = null;
+  renderAll();
+}
+cv.addEventListener("pointerup", endDrag);
+cv.addEventListener("pointercancel", endDrag);
+
+/* ============== calibration ============== */
+function askCalibration(d){
+  var px = len(sub(d.p2, d.p1));
+  var raw = window.prompt(
+    "That span is " + px.toFixed(1) + " px.\nHow long is it in real life? (e.g. 120)", "");
+  setTool("select");
+  if(raw === null){ renderAll(); return; }
+  var v = parseFloat(String(raw).replace(",", "."));
+  if(!isFinite(v) || v <= 0){ flash("Enter a positive number to calibrate."); renderAll(); return; }
+  snapshot();
+  var p = P();
+  p.pxPerUnit = px / v;
+  p.calUnit = state.unit;
+  refreshAuto();
+  renderAll();
+  flash("Calibrated — dimensions on this view now read in " + p.calUnit + ".");
+}
+
+/* ============== rail UI ============== */
+var propBody = document.getElementById("propBody");
+var annList  = document.getElementById("annList");
+var pageList = document.getElementById("pageList");
+var hintEl   = document.getElementById("hint");
+var hintTimer;
+
+function flash(msg){
+  hintEl.textContent = msg;
+  hintEl.classList.add("on");
+  clearTimeout(hintTimer);
+  hintTimer = setTimeout(function(){ hintEl.classList.remove("on"); }, 3200);
+}
+function selAnn(){
+  var p = P(); if(!p) return null;
+  return p.anns.filter(function(a){ return a.id === state.sel; })[0] || null;
+}
+function syncProps(){
+  var an = selAnn();
+  if(!an){
+    propBody.innerHTML = '<p class="empty">Nothing selected. Click a dimension on the drawing, or pick a tool and drag.</p>';
+    return;
+  }
+  var px = len(sub(an.p2, an.p1));
+  var isDim = an.type !== "leader";
+  if(propBody.dataset.for !== an.id){
+    propBody.dataset.for = an.id;
+    propBody.innerHTML =
+      '<div class="row"><label for="pName">Name</label><input class="inp" id="pName"></div>' +
+      '<div class="row"><label for="pText">' + (isDim ? "Value" : "Text") + '</label><input class="inp mono" id="pText"></div>' +
+      (isDim ? '<div class="row"><label for="pOff">Offset</label><input type="range" id="pOff" min="-260" max="260" step="1"></div>' : '') +
+      '<div class="row"><label>Span</label><span class="mono" id="pSpan" style="font-size:12px;color:var(--muted)"></span></div>' +
+      '<div style="display:flex;gap:8px;margin-top:10px">' +
+        (isDim ? '<button class="btn" id="pAuto" style="flex:1">Use scale</button>' : '') +
+        '<button class="btn" id="pDel" style="flex:1">Delete</button></div>';
+    propBody.querySelector("#pName").addEventListener("input", function(e){
+      an.name = e.target.value; syncList();
+    });
+    propBody.querySelector("#pText").addEventListener("input", function(e){
+      an.text = e.target.value; an.auto = false; paint(); syncList();
+    });
+    var off = propBody.querySelector("#pOff");
+    if(off) off.addEventListener("input", function(e){ an.off = parseFloat(e.target.value); paint(); });
+    var auto = propBody.querySelector("#pAuto");
+    if(auto) auto.addEventListener("click", function(){
+      if(!P().pxPerUnit){ flash("Calibrate this view first, then values compute themselves."); return; }
+      an.auto = true; syncProps(); paint(); syncList();
+    });
+    propBody.querySelector("#pDel").addEventListener("click", function(){
+      snapshot();
+      var p = P();
+      p.anns = p.anns.filter(function(a){ return a.id !== an.id; });
+      state.sel = null; propBody.dataset.for = ""; renderAll();
+    });
+  }
+  propBody.querySelector("#pName").value = an.name || "";
+  var t = propBody.querySelector("#pText");
+  if(document.activeElement !== t) t.value = annText(an);
+  var o = propBody.querySelector("#pOff");
+  if(o){
+    var mx = Math.max(260, Math.round(P().w * 0.3));
+    o.min = -mx; o.max = mx; o.value = an.off;
+  }
+  propBody.querySelector("#pSpan").textContent =
+    px.toFixed(0) + " px" + (P().pxPerUnit ? "  ·  " + measure(an).toFixed(state.dec) + " " + P().calUnit : "");
+}
+function syncList(){
+  var p = P(); if(!p) return;
+  if(!p.anns.length){
+    annList.innerHTML = '<p class="empty">No dimensions yet on this view. Press <b>D</b> and drag across a feature.</p>';
+    return;
+  }
+  annList.innerHTML = "";
+  p.anns.forEach(function(an){
+    var b = document.createElement("button");
+    b.className = "item";
+    b.setAttribute("aria-current", an.id === state.sel ? "true" : "false");
+    var c = document.createElement("span");
+    c.className = "chip"; c.style.background = an.ink || state.ink;
+    if(an.ink === "#FFFFFF") c.style.boxShadow = "inset 0 0 0 1px var(--rule-strong)";
+    var n = document.createElement("span");
+    n.className = "nm"; n.textContent = an.name || (an.type === "leader" ? "Callout" : "Dimension");
+    var v = document.createElement("span");
+    v.className = "vl"; v.textContent = annText(an);
+    b.appendChild(c); b.appendChild(n); b.appendChild(v);
+    b.addEventListener("click", function(){ state.sel = an.id; setTool("select"); renderAll(); });
+    annList.appendChild(b);
+  });
+}
+function syncPages(){
+  pageList.innerHTML = "";
+  state.pages.forEach(function(p, i){
+    var b = document.createElement("button");
+    b.className = "page-tab";
+    b.setAttribute("aria-current", i === state.active ? "true" : "false");
+    var im = document.createElement("img");
+    im.className = "th"; im.alt = ""; im.src = p.img.src;
+    var nm = document.createElement("span");
+    nm.className = "pn"; nm.textContent = p.name;
+    var ct = document.createElement("span");
+    ct.className = "ct"; ct.textContent = p.anns.length + " dim";
+    b.appendChild(im); b.appendChild(nm); b.appendChild(ct);
+    b.addEventListener("click", function(){
+      state.active = i; state.sel = null; propBody.dataset.for = ""; renderAll();
+    });
+    pageList.appendChild(b);
+  });
+}
+function syncScale(){
+  var p = P(); if(!p) return;
+  var box = document.getElementById("scaleBox");
+  var st  = document.getElementById("scaleState");
+  var hp  = document.getElementById("scaleHelp");
+  if(p.pxPerUnit){
+    box.classList.add("set");
+    st.textContent = p.name + " calibrated";
+    hp.innerHTML = '<span class="val">1 ' + p.calUnit + " = " + p.pxPerUnit.toFixed(2) +
+      ' px</span><br>Dimensions set to “Use scale” read out automatically. Perspective distorts anything not in the calibrated plane — treat those as approximate.';
+  } else {
+    box.classList.remove("set");
+    st.textContent = p.name + " — not calibrated";
+    hp.innerHTML = 'Pick <b>Calibrate</b> and drag across something you know the real size of — a wheel diameter, a pipe length. Every dimension after that reads out in real units.';
+  }
+}
+function renderAll(){ paint(); syncProps(); syncList(); syncPages(); syncScale(); }
+
+/* ============== controls ============== */
+function setTool(t){
+  state.tool = t;
+  [].forEach.call(document.querySelectorAll(".tool"), function(b){
+    b.setAttribute("aria-pressed", b.dataset.tool === t ? "true" : "false");
+  });
+  cv.style.cursor = t === "select" ? "default" : "crosshair";
+}
+[].forEach.call(document.querySelectorAll(".tool"), function(b){
+  b.addEventListener("click", function(){ setTool(b.dataset.tool); });
+});
+
+var sw = document.getElementById("swatches");
+INKS.forEach(function(hex){
+  var b = document.createElement("button");
+  b.className = "sw"; b.style.background = hex; b.title = hex;
+  b.setAttribute("aria-label", "Ink " + hex);
+  b.setAttribute("aria-pressed", hex === state.ink ? "true" : "false");
+  if(hex === "#FFFFFF") b.style.boxShadow = "inset 0 0 0 1px var(--rule-strong)";
+  b.addEventListener("click", function(){
+    state.ink = hex;
+    [].forEach.call(sw.children, function(c){ c.setAttribute("aria-pressed", c === b ? "true" : "false"); });
+    var an = selAnn();
+    if(an){ snapshot(); an.ink = hex; }
+    renderAll();
+  });
+  sw.appendChild(b);
+});
+document.getElementById("wSlider").addEventListener("input", function(e){
+  state.weight = parseFloat(e.target.value); paint();
+});
+document.getElementById("tSlider").addEventListener("input", function(e){
+  state.textScale = parseFloat(e.target.value); paint();
+});
+document.getElementById("zSlider").addEventListener("input", function(e){
+  state.zoom = parseFloat(e.target.value);
+  document.getElementById("zVal").textContent = Math.round(state.zoom * 100) + "%";
+  paint();
+});
+document.getElementById("unitSel").addEventListener("change", function(e){
+  state.unit = e.target.value;
+  var p = P();
+  if(p && !p.pxPerUnit) p.calUnit = state.unit;
+  renderAll();
+});
+document.getElementById("decSel").addEventListener("change", function(e){
+  state.dec = parseInt(e.target.value, 10); renderAll();
+});
+document.getElementById("btnUndo").addEventListener("click", undo);
+
+document.getElementById("btnAdd").addEventListener("click", function(){
+  document.getElementById("fileIn").click();
+});
+/* Images always come in as data: URLs — that keeps the canvas untainted, so PNG
+   and PDF export still work when this page is opened straight off the disk. */
+function addImages(files){
+  files = [].slice.call(files || []).filter(function(f){ return /^image\//.test(f.type); });
+  if(!files.length) return;
+  var pending = files.length;
+  files.forEach(function(f){
+    var rd = new FileReader();
+    rd.onload = function(){
+      var im = new Image();
+      im.onload = function(){
+        state.pages.push(mkPage(f.name.replace(/\.[^.]+$/, ""), im));
+        if(--pending === 0){ state.active = state.pages.length - 1; state.sel = null; boot(); }
+      };
+      im.onerror = function(){ if(--pending === 0) boot(); };
+      im.src = rd.result;
+    };
+    rd.readAsDataURL(f);
+  });
+}
+document.getElementById("fileIn").addEventListener("change", function(e){
+  addImages(e.target.files); e.target.value = "";
+});
+
+var dz = document.getElementById("drop"), stg = document.getElementById("stage");
+["dragenter","dragover"].forEach(function(t){
+  stg.addEventListener(t, function(e){ e.preventDefault(); dz.classList.add("over"); });
+});
+["dragleave","drop"].forEach(function(t){
+  stg.addEventListener(t, function(e){ e.preventDefault(); dz.classList.remove("over"); });
+});
+stg.addEventListener("drop", function(e){
+  if(e.dataTransfer && e.dataTransfer.files) addImages(e.dataTransfer.files);
+});
+
+document.addEventListener("keydown", function(ev){
+  var tag = (ev.target.tagName || "").toLowerCase();
+  if(tag === "input" || tag === "select" || tag === "textarea") return;
+  var k = ev.key.toLowerCase();
+  if((ev.ctrlKey || ev.metaKey) && k === "z"){ ev.preventDefault(); undo(); return; }
+  if(k === "v"){ setTool("select"); }
+  else if(k === "d"){ setTool("dim"); }
+  else if(k === "l"){ setTool("leader"); }
+  else if(k === "c"){ setTool("cal"); }
+  else if(k === "escape"){ state.sel = null; setTool("select"); renderAll(); }
+  else if(ev.key === "Delete" || ev.key === "Backspace"){
+    var an = selAnn();
+    if(an){ ev.preventDefault(); snapshot();
+      P().anns = P().anns.filter(function(a){ return a.id !== an.id; });
+      state.sel = null; propBody.dataset.for = ""; renderAll(); }
+  }
+  else if(ev.key.indexOf("Arrow") === 0){
+    var a2 = selAnn(); if(!a2) return;
+    ev.preventDefault();
+    var st = ev.shiftKey ? 10 : 1;
+    var dx = (ev.key === "ArrowRight" ? st : ev.key === "ArrowLeft" ? -st : 0);
+    var dy = (ev.key === "ArrowDown" ? st : ev.key === "ArrowUp" ? -st : 0);
+    a2.p1.x += dx; a2.p1.y += dy; a2.p2.x += dx; a2.p2.y += dy;
+    paint(); syncProps();
+  }
+});
+
+var rz;
+window.addEventListener("resize", function(){
+  clearTimeout(rz); rz = setTimeout(paint, 90);
+});
+
+/* ============== export ============== */
+var dl = null;
+if(window.claude && window.claude.use){
+  window.claude.use("downloads").then(function(d){ dl = d; }).catch(function(){});
+}
+/* Plain browser download — the path used when this file runs from disk. */
+function anchorSave(filename, data){
+  var blob = (data instanceof Blob) ? data : new Blob([data], {type:"application/octet-stream"});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+}
+function canvasBlob(c, type, q){
+  return new Promise(function(res){ c.toBlob(res, type, q); });
+}
+async function save(filename, data){
+  if(dl){
+    try{
+      await dl.save({filename:filename, data:data});
+      flash("Saved " + filename);
+      return;
+    }catch(err){
+      var code = err && err.code;
+      if(code === "declined") return;
+      if(code === "rate_limited"){ flash("A save prompt is already open."); return; }
+      /* fall through to the ordinary download */
+    }
+  }
+  try{
+    anchorSave(filename, data);
+    flash("Saved " + filename);
+  }catch(e){
+    flash("Couldn't save: " + (e && e.message ? e.message : "unknown error"));
+  }
+}
+document.getElementById("btnPng").addEventListener("click", async function(){
+  var p = P(); if(!p) return;
+  var blob = await canvasBlob(renderFull(p), "image/png");
+  await save(slug(p.name) + "-dimensioned.png", blob);
+});
+function slug(s){
+  return String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48) || "view";
+}
+
+document.getElementById("btnPdf").addEventListener("click", async function(){
+  if(!window.jspdf){ flash("PDF library didn't load — reload the page."); return; }
+  var title = document.getElementById("docTitle").value.trim() || "Dimension Sheet";
+  var JsPDF = window.jspdf.jsPDF;
+  var pdf = new JsPDF({unit:"pt", format:"a4", orientation:"portrait"});
+  var PW = 595.28, PH = 841.89, M = 40;
+  var today = new Date().toISOString().slice(0, 10);
+
+  for(var i = 0; i < state.pages.length; i++){
+    var p = state.pages[i];
+    if(i) pdf.addPage();
+
+    /* title block */
+    pdf.setDrawColor(190); pdf.setLineWidth(0.6);
+    pdf.rect(M, M, PW - M*2, PH - M*2);
+    pdf.line(M, M + 40, PW - M, M + 40);
+    pdf.line(M, PH - M - 30, PW - M, PH - M - 30);
+
+    pdf.setFont("helvetica", "bold"); pdf.setFontSize(12.5); pdf.setTextColor(20);
+    pdf.text(title, M + 12, M + 25);
+    pdf.setFont("helvetica", "normal"); pdf.setFontSize(9); pdf.setTextColor(110);
+    pdf.text(p.name, PW - M - 12, M + 25, {align:"right"});
+
+    /* image, fitted between the rules */
+    var availW = PW - M*2 - 24, availH = PH - M*2 - 40 - 30 - 24;
+    var s = Math.min(availW / p.w, availH / p.h);
+    var iw = p.w * s, ih = p.h * s;
+    var ix = M + (PW - M*2 - iw) / 2, iy = M + 40 + 12 + (availH - ih) / 2;
+    var data = renderFull(p).toDataURL("image/jpeg", 0.92);
+    pdf.addImage(data, "JPEG", ix, iy, iw, ih);
+
+    /* footer */
+    pdf.setFontSize(8); pdf.setTextColor(120);
+    var scaleTxt = p.pxPerUnit
+      ? "Scale ref: 1 " + p.calUnit + " = " + p.pxPerUnit.toFixed(2) + " px (image)"
+      : "Uncalibrated — values as annotated";
+    pdf.text(scaleTxt, M + 12, PH - M - 12);
+    pdf.text(today, PW / 2, PH - M - 12, {align:"center"});
+    pdf.text("Sheet " + (i + 1) + " of " + state.pages.length, PW - M - 12, PH - M - 12, {align:"right"});
+  }
+  await save(slug(title) + ".pdf", pdf.output("blob"));
+});
+
+/* ============== project save / open ============== */
+function projectJSON(){
+  return JSON.stringify({
+    format: "dimension-sheet/1",
+    title: document.getElementById("docTitle").value,
+    unit: state.unit, dec: state.dec,
+    weight: state.weight, textScale: state.textScale,
+    pages: state.pages.map(function(p){
+      return { name:p.name, src:p.img.src, anns:p.anns,
+               pxPerUnit:p.pxPerUnit, calUnit:p.calUnit };
+    })
+  });
+}
+document.getElementById("btnSave").addEventListener("click", function(){
+  if(!state.pages.length){ flash("Nothing to save yet."); return; }
+  save(slug(document.getElementById("docTitle").value) + ".json", projectJSON());
+});
+document.getElementById("btnOpen").addEventListener("click", function(){
+  document.getElementById("projIn").click();
+});
+document.getElementById("projIn").addEventListener("change", function(e){
+  var f = (e.target.files || [])[0];
+  e.target.value = "";
+  if(!f) return;
+  var rd = new FileReader();
+  rd.onload = function(){
+    var d;
+    try{ d = JSON.parse(rd.result); }catch(err){ flash("That isn't a readable project file."); return; }
+    if(!d || !Array.isArray(d.pages)){ flash("That isn't a dimension-sheet project."); return; }
+    Promise.all(d.pages.map(function(pg){
+      return new Promise(function(res){
+        var im = new Image();
+        im.onload = function(){ res({pg:pg, im:im}); };
+        im.onerror = function(){ res(null); };
+        im.src = pg.src;
+      });
+    })).then(function(loaded){
+      var pages = [];
+      loaded.forEach(function(L){
+        if(!L) return;
+        var np = mkPage(L.pg.name || "View", L.im);
+        np.anns = (L.pg.anns || []).map(function(a){
+          if(a.id) uid = Math.max(uid, parseInt(String(a.id).slice(1), 10) || 0);
+          return a;
+        });
+        np.pxPerUnit = L.pg.pxPerUnit || null;
+        np.calUnit = L.pg.calUnit || "mm";
+        pages.push(np);
+      });
+      if(!pages.length){ flash("No usable views in that file."); return; }
+      state.pages = pages; state.active = 0; state.sel = null; state.history = [];
+      document.getElementById("propBody").dataset.for = "";
+      if(d.title) document.getElementById("docTitle").value = d.title;
+      if(d.unit){ state.unit = d.unit; document.getElementById("unitSel").value = d.unit; }
+      if(typeof d.dec === "number"){ state.dec = d.dec; document.getElementById("decSel").value = String(d.dec); }
+      if(d.weight){ state.weight = d.weight; document.getElementById("wSlider").value = d.weight; }
+      if(d.textScale){ state.textScale = d.textScale; document.getElementById("tSlider").value = d.textScale; }
+      boot();
+      flash("Opened " + (d.title || f.name));
+    });
+  };
+  rd.readAsText(f);
+});
+
+/* ============== boot ============== */
+function boot(){
+  var has = state.pages.length > 0;
+  document.getElementById("sheet").hidden = !has;
+  document.getElementById("drop").hidden = has;
+  ["btnPng","btnPdf","btnSave"].forEach(function(id){
+    document.getElementById(id).disabled = !has;
+  });
+  if(has) renderAll(); else { syncList(); syncPages(); }
+}
+boot();
+})();
+</script>
+</body>
+</html>
